@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tmfxml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="xmldefinition.xsd">
+
+	<!-- The state provider assigns states from events -->
+	<stateProvider id="trazer.nmin" version="0">
+		<head>
+			<!-- <traceType id="org.eclipse.linuxtools.lttng2.ust.tracetype" /> -->
+			<label value="Trazer nMin Analysis" />
+		</head>
+
+		<!-- Event handlers -->
+		<eventHandler eventName="SmaFifo">
+			<stateChange>
+				<stateAttribute type="constant" value="ActObjs" />
+				<stateAttribute type="eventField" value="Ao" />
+				<stateAttribute type="constant" value="nMin" />
+				<stateValue type="eventField" value="nMin" forcedType="int" />
+			</stateChange>
+			<stateChange>
+				<stateAttribute type="constant" value="ActObjs" />
+				<stateAttribute type="eventField" value="Ao" />
+				<stateAttribute type="constant" value="nElem" />
+				<stateValue type="eventField" value="nElem" forcedType="int" />
+			</stateChange>
+		</eventHandler>
+		<eventHandler eventName="SmaLifo">
+			<stateChange>
+				<stateAttribute type="constant" value="ActObjs" />
+				<stateAttribute type="eventField" value="Ao" />
+				<stateAttribute type="constant" value="nMin" />
+				<stateValue type="eventField" value="nMin" forcedType="int" />
+			</stateChange>
+			<stateChange>
+				<stateAttribute type="constant" value="ActObjs" />
+				<stateAttribute type="eventField" value="Ao" />
+				<stateAttribute type="constant" value="nElem" />
+				<stateValue type="eventField" value="nElem" forcedType="int" />
+			</stateChange>
+		</eventHandler>
+		<eventHandler eventName="SmaGet">
+			<stateChange>
+				<stateAttribute type="constant" value="ActObjs" />
+				<stateAttribute type="eventField" value="Ao" />
+				<stateAttribute type="constant" value="nElem" />
+				<stateValue type="eventField" value="nElem" forcedType="int" />
+			</stateChange>
+		</eventHandler>
+	</stateProvider>
+
+	<!-- This is the definition of the XY view -->
+	<xyView id="trazer.time.xy.view">
+		<head>
+			<analysis id="trazer.nmin" />
+			<label value="Trazer nMin XY View" />
+		</head>
+	
+		<!-- Which attributes to "print" in the view -->
+		<entry path="ActObjs/*">
+            <display type="constant" value="nMin" />
+            <name type="self" />
+		</entry>
+	</xyView>
+
+	<!-- This is the definition of the time-graph view -->
+	<timeGraphView id="trazer.time.view">
+		<head>
+			<analysis id="trazer.nmin" />
+			<label value="Trazer nMin Time View" />
+		</head>
+	  
+        <definedValue name="0"  value="0"  color="#ff0000" />
+        <definedValue name="1"  value="1"  color="#fee11a" />
+        <definedValue name="2"  value="2"  color="#bcdd68" />
+        <definedValue name="3"  value="3"  color="#bcdd68" />
+        <definedValue name="4"  value="4"  color="#bcdd68" />
+        <definedValue name="5"  value="5"  color="#bcdd68" />
+        <definedValue name="6"  value="6"  color="#bcdd68" />
+        <definedValue name="7"  value="7"  color="#bcdd68" />
+        <definedValue name="7"  value="7"  color="#bcdd68" />
+        <definedValue name="8"  value="8"  color="#bcdd68" />
+        <definedValue name="9"  value="9"  color="#bcdd68" />
+        <definedValue name="10" value="10" color="#bcdd68" />
+        <definedValue name="11" value="11" color="#bcdd68" />
+        <definedValue name="12" value="12" color="#bcdd68" />
+        <definedValue name="13" value="13" color="#bcdd68" />
+        <definedValue name="14" value="14" color="#bcdd68" />
+        <definedValue name="15" value="15" color="#bcdd68" />
+        <definedValue name="16" value="16" color="#bcdd68" />
+        <definedValue name="17" value="17" color="#bcdd68" />
+        <definedValue name="18" value="18" color="#bcdd68" />
+        <definedValue name="19" value="19" color="#bcdd68" />
+        <definedValue name="20" value="20" color="#bcdd68" />
+        <definedValue name="21" value="21" color="#bcdd68" />
+        <definedValue name="22" value="22" color="#bcdd68" />
+        <definedValue name="23" value="23" color="#bcdd68" />
+
+		<!-- Which attributes to "print" in the view -->
+		<entry path="ActObjs/*" displayText="true" >
+            <display type="constant" value="nMin" />
+            <name type="self" />
+		</entry>
+	</timeGraphView>
+
+</tmfxml>

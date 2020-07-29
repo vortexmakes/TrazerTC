@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<CustomTxtTraceDefinitionList>
+            
+    
+
+    
+
+    <Definition category="Trazer" name="Trazer">
+        <TimeStampOutputFormat>T</TimeStampOutputFormat>
+        <InputLine>
+            <Cardinality max="2147483647" min="0"/>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(\S+)\s*\|\s*+(\S+)\s*:\s+ao=+(\S+),\snxtst=+(\S+)\s*</RegEx>
+            <EventType>State</EventType>
+            <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
+            <InputData action="0" format="" name="Sequence" tag="OTHER"/>
+            <InputData action="0" format="" name="Group" tag="OTHER"/>
+            <InputData action="0" format="" name="Event type" tag="EVENT_TYPE"/>
+            <InputData action="0" format="" name="Ao" tag="OTHER"/>
+            <InputData action="0" format="" name="State" tag="OTHER"/>
+        </InputLine>
+        <InputLine>
+            <Cardinality max="2147483647" min="0"/>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(\S+)\s*\|\s*+(\S+)\s*:\s+ao=+(\S+),\ssig=+(\S+),\sst=+(\S+)\s*</RegEx>
+            <EventType>SmDch</EventType>
+            <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
+            <InputData action="0" format="" name="Sequence" tag="OTHER"/>
+            <InputData action="0" format="" name="Group" tag="OTHER"/>
+            <InputData action="0" format="" name="Event type" tag="EVENT_TYPE"/>
+            <InputData action="0" format="" name="Ao" tag="OTHER"/>
+            <InputData action="0" format="" name="Signal" tag="OTHER"/>
+            <InputData action="0" format="" name="State" tag="OTHER"/>
+        </InputLine>
+        <InputLine>
+            <Cardinality max="2147483647" min="0"/>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(\S+)\s*\|\s*+(\S+)\s*:\s+ao=+(\S+),\ssig=+(\S+),\ssnr=+(\S+),\s\S+,\s\S+,\snelem=+(\d+),\snmin=+(\d+),.*</RegEx>
+            <EventType>PostFifoLifo</EventType>
+            <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
+            <InputData action="0" format="" name="Sequence" tag="OTHER"/>
+            <InputData action="0" format="" name="Group" tag="OTHER"/>
+            <InputData action="0" format="" name="Event type" tag="EVENT_TYPE"/>
+            <InputData action="0" format="" name="Ao" tag="OTHER"/>
+            <InputData action="0" format="" name="Signal" tag="OTHER"/>
+            <InputData action="0" format="" name="Sender" tag="OTHER"/>
+            <InputData action="2" format="" name="nElem" tag="OTHER"/>
+            <InputData action="0" format="" name="nMin" tag="OTHER"/>
+        </InputLine>
+        <InputLine>
+            <Cardinality max="2147483647" min="0"/>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(\S+)\s*\|\s*+(\S+)\s*:\s+ao=+(\S+),\ssig=+(\S+),\s\S+,\s\S+,\snelem=+(\d+),\snmin=+(\d+),\srt=+(\d+),.*</RegEx>
+            <EventType>GET</EventType>
+            <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
+            <InputData action="0" format="" name="Sequence" tag="OTHER"/>
+            <InputData action="0" format="" name="Group" tag="OTHER"/>
+            <InputData action="0" format="" name="Event type" tag="EVENT_TYPE"/>
+            <InputData action="0" format="" name="Ao" tag="OTHER"/>
+            <InputData action="0" format="" name="Signal" tag="OTHER"/>
+            <InputData action="0" format="" name="nElem" tag="OTHER"/>
+            <InputData action="0" format="" name="nMin" tag="OTHER"/>
+            <InputData action="0" format="" name="RespTime" tag="OTHER"/>
+        </InputLine>
+        <InputLine>
+            <Cardinality max="2147483647" min="0"/>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(\S+)\s*\|\s*+(\S+)\s*:\s+t=+(\S+),\ssig=+(\S+)\s*</RegEx>
+            <EventType>TmrInit</EventType>
+            <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
+            <InputData action="0" format="" name="Sequence" tag="OTHER"/>
+            <InputData action="0" format="" name="Group" tag="OTHER"/>
+            <InputData action="0" format="" name="Event type" tag="EVENT_TYPE"/>
+            <InputData action="2" format="" name="TmrObj" tag="OTHER"/>
+            <InputData action="1" format="" name="Signal" tag="OTHER"/>
+        </InputLine>
+        <InputLine>
+            <Cardinality max="2147483647" min="0"/>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(\S+)\s*\|\s*+(\S+)\s*:\s+t=+(\S+),\sao=+(\S+),\snt=+(\d+),\sper=+(\d+)\s*</RegEx>
+            <EventType>TmrStart</EventType>
+            <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
+            <InputData action="0" format="" name="Sequence" tag="OTHER"/>
+            <InputData action="0" format="" name="Group" tag="OTHER"/>
+            <InputData action="0" format="" name="Event type" tag="EVENT_TYPE"/>
+            <InputData action="0" format="" name="TmrObj" tag="OTHER"/>
+            <InputData action="0" format="" name="Ao" tag="OTHER"/>
+            <InputData action="0" format="" name="nTick" tag="OTHER"/>
+            <InputData action="0" format="" name="Per" tag="OTHER"/>
+        </InputLine>
+        <InputLine>
+            <Cardinality max="2147483647" min="0"/>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(\S+)\s*\|\s*+(\S+)\s*:\s+t=+(\S+),\ssig=+(\S+),\sao=+(\S+)\s*</RegEx>
+            <EventType>TmrTout</EventType>
+            <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
+            <InputData action="0" format="" name="Sequence" tag="OTHER"/>
+            <InputData action="0" format="" name="Group" tag="OTHER"/>
+            <InputData action="0" format="" name="Event type" tag="EVENT_TYPE"/>
+            <InputData action="0" format="" name="TmrObj" tag="OTHER"/>
+            <InputData action="0" format="" name="Signal" tag="OTHER"/>
+            <InputData action="0" format="" name="Ao" tag="OTHER"/>
+        </InputLine>
+        <InputLine>
+            <Cardinality max="2147483647" min="0"/>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(\S+)\s*\|\s*+(\S+)\s*:\s+t=+(\S+)\s*</RegEx>
+            <EventType>TmrRem</EventType>
+            <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
+            <InputData action="0" format="" name="Sequence" tag="OTHER"/>
+            <InputData action="0" format="" name="Group" tag="OTHER"/>
+            <InputData action="0" format="" name="Event type" tag="EVENT_TYPE"/>
+            <InputData action="0" format="" name="TmrObj" tag="OTHER"/>
+        </InputLine>
+        <InputLine>
+            <Cardinality max="2147483647" min="0"/>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(\S+)\s*\|\s*+(\S+)\s*:\s+mp=+(\S+),\snb=+(\d+),\sbs=+(\d+)\s*</RegEx>
+            <EventType>MpInit</EventType>
+            <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
+            <InputData action="0" format="" name="Sequence" tag="OTHER"/>
+            <InputData action="0" format="" name="Group" tag="OTHER"/>
+            <InputData action="0" format="" name="Event type" tag="EVENT_TYPE"/>
+            <InputData action="0" format="" name="MpObj" tag="OTHER"/>
+            <InputData action="0" format="" name="nBlock" tag="OTHER"/>
+            <InputData action="0" format="" name="blockSize" tag="OTHER"/>
+        </InputLine>
+        <InputLine>
+            <Cardinality max="2147483647" min="0"/>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(\S+)\s*\|\s*+(\S+)\s*:\s+mp=+(\S+),\snfree=+(\d+),\snmin=+(\d+)\s*</RegEx>
+            <EventType>MpGet</EventType>
+            <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
+            <InputData action="0" format="" name="Sequence" tag="OTHER"/>
+            <InputData action="0" format="" name="Group" tag="OTHER"/>
+            <InputData action="0" format="" name="Event type" tag="EVENT_TYPE"/>
+            <InputData action="0" format="" name="MpObj" tag="OTHER"/>
+            <InputData action="0" format="" name="nFree" tag="OTHER"/>
+            <InputData action="0" format="" name="nMin" tag="OTHER"/>
+        </InputLine>
+        <InputLine>
+            <Cardinality max="2147483647" min="0"/>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(\S+)\s*\|\s*+(\S+)\s*:\s+mp=+(\S+),\snfree=+(\d+)\s*</RegEx>
+            <EventType>MpPut</EventType>
+            <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
+            <InputData action="0" format="" name="Sequence" tag="OTHER"/>
+            <InputData action="0" format="" name="Group" tag="OTHER"/>
+            <InputData action="0" format="" name="Event type" tag="EVENT_TYPE"/>
+            <InputData action="0" format="" name="MpObj" tag="OTHER"/>
+            <InputData action="0" format="" name="nFree" tag="OTHER"/>
+        </InputLine>
+        <InputLine>
+            <Cardinality max="2147483647" min="0"/>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(\S+)\s*\|\s*+(\S+)\s*:\s+q=+(\S+),\sao=+(\S+),\snelem=+(\d+)\s*</RegEx>
+            <EventType>QueInit</EventType>
+            <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
+            <InputData action="0" format="" name="Sequence" tag="OTHER"/>
+            <InputData action="0" format="" name="Group" tag="OTHER"/>
+            <InputData action="0" format="" name="Event type" tag="EVENT_TYPE"/>
+            <InputData action="0" format="" name="QueObj" tag="OTHER"/>
+            <InputData action="0" format="" name="Ao" tag="OTHER"/>
+            <InputData action="0" format="" name="nElem" tag="OTHER"/>
+        </InputLine>
+        <InputLine>
+            <Cardinality max="2147483647" min="0"/>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(\S+)\s*\|\s*+(\S+)\s*:\s+q=+(\S+),\snelem=+(\d+),\snmin=+(\d+)\s*</RegEx>
+            <EventType>QueFifo</EventType>
+            <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
+            <InputData action="0" format="" name="Sequence" tag="OTHER"/>
+            <InputData action="0" format="" name="Group" tag="OTHER"/>
+            <InputData action="0" format="" name="Event type" tag="EVENT_TYPE"/>
+            <InputData action="0" format="" name="QueObj" tag="OTHER"/>
+            <InputData action="0" format="" name="nElem" tag="OTHER"/>
+            <InputData action="0" format="" name="nMin" tag="OTHER"/>
+        </InputLine>
+        <InputLine>
+            <Cardinality max="2147483647" min="0"/>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(\S+)\s*\|\s*+(\S+)\s*:\s+q=+(\S+)\s*</RegEx>
+            <EventType>QueGetLast</EventType>
+            <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
+            <InputData action="0" format="" name="Sequence" tag="OTHER"/>
+            <InputData action="0" format="" name="Group" tag="OTHER"/>
+            <InputData action="0" format="" name="Event type" tag="EVENT_TYPE"/>
+            <InputData action="0" format="" name="QueObj" tag="OTHER"/>
+        </InputLine>
+        <InputLine>
+            <Cardinality max="2147483647" min="0"/>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(\S+)\s*\|\s*+(\S+)\s*:\s+q=+(\S+),\s+nelem=+(\d+)\s*</RegEx>
+            <EventType>QueGet</EventType>
+            <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
+            <InputData action="0" format="" name="Sequence" tag="OTHER"/>
+            <InputData action="0" format="" name="Group" tag="OTHER"/>
+            <InputData action="0" format="" name="Event type" tag="EVENT_TYPE"/>
+            <InputData action="0" format="" name="QueObj" tag="OTHER"/>
+            <InputData action="0" format="" name="nElem" tag="OTHER"/>
+        </InputLine>
+        <OutputColumn name="Timestamp" tag="TIMESTAMP"/>
+        <OutputColumn name="Sequence" tag="OTHER"/>
+        <OutputColumn name="Group" tag="OTHER"/>
+        <OutputColumn name="Event type" tag="EVENT_TYPE"/>
+        <OutputColumn name="Ao" tag="OTHER"/>
+        <OutputColumn name="Signal" tag="OTHER"/>
+        <OutputColumn name="Sender" tag="OTHER"/>
+        <OutputColumn name="nElem" tag="OTHER"/>
+        <OutputColumn name="nMin" tag="OTHER"/>
+        <OutputColumn name="RespTime" tag="OTHER"/>
+        <OutputColumn name="TmrObj" tag="OTHER"/>
+        <OutputColumn name="nTick" tag="OTHER"/>
+        <OutputColumn name="Per" tag="OTHER"/>
+        <OutputColumn name="MpObj" tag="OTHER"/>
+        <OutputColumn name="nBlock" tag="OTHER"/>
+        <OutputColumn name="blockSize" tag="OTHER"/>
+        <OutputColumn name="nFree" tag="OTHER"/>
+        <OutputColumn name="QueObj" tag="OTHER"/>
+        <OutputColumn name="State" tag="OTHER"/>
+    </Definition>
+</CustomTxtTraceDefinitionList>
