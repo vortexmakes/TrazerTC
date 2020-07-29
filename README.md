@@ -33,9 +33,19 @@ Trace Compass Examples for Trazer
     2. Right-click the trace and select __Select Trace Type...__ > __Trazer__ > __Parser__
     3. Double-click the trace or right-click it and select __Open__. The trace will be opened in an editor showing the events table, and an entry will 
     be added for it in the Time Chart view
+7. Importing trace filters
+    1. Open __Filters__ view
+    2. Click __Import filters__ button and select a file from the opened file dialog to import an XML file containing trace filters, in this case from
+    [filters](https://github.com/vortexmakes/TrazerTC/blob/master/filters) folder.
 
 ## Updating a XML analysis
 If there are corrections to make, you may modify the XML state provider (trace data analysis) file, and re-import it. To re-run the analysis:
 1. Select a trace in the __Project Explorer__ view
 2. Right-click the selected trace and select __Delete supplementary files...__ and then click the __OK__ button. The supplementary file deletion will
-have closed the trace, so it needs to be opened again to use the newly imported analysis file. 
+have closed the trace, so it needs to be opened again to use the newly imported analysis file
+
+## Updating Trazer parser
+1. Open the __Project Explorer__ view.
+2. Select __Manage Custom Parsers...__ from the __Traces__ folder context menu, or from a trace's __Select Trace Type...__ context sub-menu.
+3. Select Trazer parser from the list and click the __Edit...__ button to launch the __Edit Custom Parser__ wizard.
+4. Once parser has been edited, export it. To do that, select Trazer parser from the list, click the __Export...__ button and enter or select a file in the opened file dialog to export the Trazer parser. Note that if an existing file containing custom parsers is selected, the custom parser will be appended to the file. 
