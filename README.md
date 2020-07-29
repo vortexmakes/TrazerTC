@@ -1,9 +1,19 @@
 # TrazerTC
 Trace Compass Examples for Trazer
-![Trace Compass parsing Trazer ouput](images/tc.png)
 
+## Contents
+- [Overview](#overview)
+- [Trace Compass Documentation](#trace-compass-documentation)
+- [Before to start](#before-to-start)
+- [Using Trace Compass with Trazer](#using-trace-compass-with-trazer)
+- [Updating a XML analysis](#updating-a-xml-analysis)
+- [Updating Trazer parser](#updating-trazer-parser)
+------------------------------------------------------------------------------
 ## Overview
-[Trace Compass](https://www.eclipse.org/tracecompass/) is a Java tool for viewing and analyzing any type of logs or traces. Its goal is to provide views, graphs, metrics, etc. to help extract useful information from traces, in a way that is more user-friendly and informative than huge text dumps. In this case, they are produced by [Trazer](https://github.com/vortexmakes/Trazer) application, which is a visualization tool that works in conjuntion with the [RKH](https://github.com/vortexmakes/RKH) framework built in trace facility.
+[Trace Compass](https://www.eclipse.org/tracecompass/) is a Java tool for viewing and analyzing any type of logs or traces. Its goal is to provide views, graphs, metrics, etc. to help extract useful information from traces, in a way that is more user-friendly and informative than huge text dumps. 
+In this case, they are produced by [Trazer](https://github.com/vortexmakes/Trazer) application, which is a visualization tool that works in conjuntion with the [RKH](https://github.com/vortexmakes/RKH) framework built in trace facility.
+
+![Trace Compass parsing Trazer ouput](images/tc.png)
 
 ## Trace Compass Documentation
 - Trace Compass User Guide https://archive.eclipse.org/tracecompass/doc/stable/org.eclipse.tracecompass.doc.user/User-Guide.html
