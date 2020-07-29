@@ -1,5 +1,6 @@
 # TrazerTC
 Trace Compass Examples for Trazer
+![Trace Compass parsing Trazer ouput](images/tc.png)
 
 ## Overview
 [Trace Compass](https://www.eclipse.org/tracecompass/) is a Java tool for viewing and analyzing any type of logs or traces. Its goal is to provide views, graphs, metrics, etc. to help extract useful information from traces, in a way that is more user-friendly and informative than huge text dumps. In this case, they are produced by [Trazer](https://github.com/vortexmakes/Trazer) application, which is a visualization tool that works in conjuntion with the [RKH](https://github.com/vortexmakes/RKH) framework built in trace facility.
