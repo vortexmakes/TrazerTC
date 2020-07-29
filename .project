@@ -9,4 +9,11 @@
 	<natures>
 		<nature>org.eclipse.linuxtools.tmf.project.nature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>Traces/trazer-agroiot</name>
+			<type>1</type>
+			<location>/home/lean/projects/TrazerTC/samples/trazer-agroiot</location>
+		</link>
+	</linkedResources>
 </projectDescription>
