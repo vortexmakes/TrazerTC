@@ -1,0 +1,870 @@
+
+--- TRAZER V3.2 RC --- RKH trace event interpreter ---
+
+          build date:	May 24 2019
+          tested with:	RKH V3.0.00
+
+Using local RKH configuration
+
+   RKH_CFGPORT_TRC_SIZEOF_TSTAMP = 8
+   RKH_CFGPORT_TRC_SIZEOF_PTR    = 32
+   RKH_CFG_FWK_SIZEOF_EVT        = 8
+   RKH_CFG_FWK_SIZEOF_EVT_SIZE   = 16
+   RKH_CFG_FWK_MAX_EVT_POOL      = 4
+   RKH_CFG_RQ_GET_LWMARK_EN      = 0
+   RKH_CFG_RQ_SIZEOF_NELEM       = 8
+   RKH_CFG_MP_GET_LWM_EN         = 0
+   RKH_CFG_MP_SIZEOF_NBLOCK      = 8
+   RKH_CFG_MP_SIZEOF_BSIZE       = 8
+   RKH_CFG_SMA_TRC_SNDR_EN       = 0
+   RKH_CFG_TMR_SIZEOF_NTIMER     = 16
+   RKH_CFG_TRC_RTFIL_EN          = 1
+   RKH_CFG_TRC_USER_TRACE_EN     = 1
+   RKH_CFG_TRC_ALL_EN            = 1
+   RKH_CFG_TRC_MP_EN             = 0
+   RKH_CFG_TRC_RQ_EN             = 0
+   RKH_CFG_TRC_SMA_EN            = 0
+   RKH_CFG_TRC_TMR_EN            = 0
+   RKH_CFG_TRC_SM_EN             = 0
+   RKH_CFG_TRC_FWK_EN            = 1
+   RKH_CFG_TRC_ASSERT_EN         = 1
+   RKH_CFG_TRC_RTFIL_SMA_EN      = 1
+   RKH_CFG_TRC_RTFIL_SIGNAL_EN   = 1
+   RKH_CFG_TRC_NSEQ_EN           = 1
+   RKH_CFG_TRC_TSTAMP_EN         = 1
+   RKH_CFG_TRC_CHK_EN            = 1
+
+
+-------- Parsing trace stream from TCP Port 6602 --------
+
+   0| [  0] | FWK | TCFG       : Update RKH Configuration from client
+                                      | RKH_VERSION                   = 3.2.03
+                                      | TRZ_RKH_CFGPORT_TRC_SIZEOF_TSTAMP= 32
+                                      | TRZ_RKH_CFGPORT_TRC_SIZEOF_PTR= 32
+                                      | TRZ_RKH_CFG_FWK_SIZEOF_EVT    = 8
+                                      | TRZ_RKH_CFG_FWK_SIZEOF_EVT_SIZE= 16
+                                      | TRZ_RKH_CFG_FWK_MAX_EVT_POOL  = 4
+                                      | TRZ_RKH_CFG_RQ_GET_LWMARK_EN  = 1
+                                      | TRZ_RKH_CFG_RQ_SIZEOF_NELEM   = 8
+                                      | TRZ_RKH_CFG_MP_GET_LWM_EN     = 1
+                                      | TRZ_RKH_CFG_MP_SIZEOF_NBLOCK  = 8
+                                      | TRZ_RKH_CFG_MP_SIZEOF_BSIZE   = 8
+                                      | TRZ_RKH_CFG_SMA_TRC_SNDR_EN   = 1
+                                      | TRZ_RKH_CFG_TMR_SIZEOF_NTIMER = 16
+                                      | TRZ_RKH_CFG_TRC_RTFIL_EN      = 1
+                                      | TRZ_RKH_CFG_TRC_USER_TRACE_EN = 0
+                                      | TRZ_RKH_CFG_TRC_ALL_EN        = 1
+                                      | TRZ_RKH_CFG_TRC_MP_EN         = 0
+                                      | TRZ_RKH_CFG_TRC_RQ_EN         = 0
+                                      | TRZ_RKH_CFG_TRC_SMA_EN        = 0
+                                      | TRZ_RKH_CFG_TRC_TMR_EN        = 0
+                                      | TRZ_RKH_CFG_TRC_SM_EN         = 0
+                                      | TRZ_RKH_CFG_TRC_FWK_EN        = 1
+                                      | TRZ_RKH_CFG_TRC_ASSERT_EN     = 1
+                                      | TRZ_RKH_CFG_TRC_RTFIL_SMA_EN  = 1
+                                      | TRZ_RKH_CFG_TRC_RTFIL_SIGNAL_EN= 1
+                                      | TRZ_RKH_CFG_TRC_NSEQ_EN       = 1
+                                      | TRZ_RKH_CFG_TRC_TSTAMP_EN     = 1
+                                      | TRZ_RKH_CFG_TRC_CHK_EN        = 1
+                                      | tstamp_tick_hz                = 16960
+
+
+     507350| [  0] | FWK | OBJ        : obj=0xFE614870, nm=l_isr_kbd
+     507372| [  1] | FWK | OBJ        : obj=0xFE614871, nm=l_isr_tick
+     507393| [  2] | MP  | INIT       : mp=0XFE614760, nb=4, bs=8
+     507394| [  3] | MP  | INIT       : mp=0XFE614788, nb=2, bs=8
+     507396| [  4] | RQ  | INIT       : q=0XFE614350, ao=0XFE614340, nelem=4
+     507397| [  5] | FWK | AO         : obj=0xFE614340, nm=server
+     507463| [  6] | FWK | STATE      : ao=server, obj=0xFE6139C0, nm=server_idle
+     507495| [  7] | FWK | STATE      : ao=server, obj=0xFE613A80, nm=server_busy
+     507537| [  8] | FWK | STATE      : ao=server, obj=0xFE613B60, nm=server_paused
+     507561| [  9] | FWK | SIG        : sig=0, nm=REQ
+     507572| [ 10] | FWK | SIG        : sig=1, nm=START
+     507584| [ 11] | FWK | SIG        : sig=2, nm=DONE
+     507596| [ 12] | FWK | SIG        : sig=4, nm=TOUT_USING
+     507612| [ 13] | FWK | SIG        : sig=3, nm=TOUT_REQ
+     507627| [ 14] | FWK | SIG        : sig=5, nm=PAUSE
+     507639| [ 15] | FWK | SIG        : sig=6, nm=TERM
+     507651| [ 16] | RQ  | INIT       : q=0XFE6149A0, ao=?, nelem=8
+     507652| [ 17] | SM  | STATE      : ao=server, nxtst=server_idle
+     507653| [ 18] | RQ  | INIT       : q=0XFE6140B0, ao=0XFE6140A0, nelem=4
+     507654| [ 19] | FWK | AO         : obj=0xFE6140A0, nm=cli0
+     507707| [ 20] | FWK | AO         : obj=0xFE614140, nm=cli1
+     507721| [ 21] | FWK | AO         : obj=0xFE6141E0, nm=cli2
+     507734| [ 22] | FWK | AO         : obj=0xFE614280, nm=cli3
+     507748| [ 23] | FWK | STATE      : ao=cli0, obj=0xFE613660, nm=client_idle
+     507772| [ 24] | FWK | STATE      : ao=cli0, obj=0xFE613700, nm=client_waiting
+     507806| [ 25] | FWK | STATE      : ao=cli0, obj=0xFE613780, nm=client_using
+     507830| [ 26] | FWK | STATE      : ao=cli0, obj=0xFE613820, nm=client_paused
+     507854| [ 27] | TIM | INIT       : t=0XFE6140F0, sig=TOUT_USING
+     507855| [ 28] | TIM | INIT       : t=0XFE614110, sig=TOUT_REQ
+     507856| [ 29] | TIM | START      : t=0XFE614110, ao=cli0, nt=600, per=0
+     507863| [ 30] | SM  | STATE      : ao=cli0, nxtst=client_idle
+     507863| [ 31] | RQ  | INIT       : q=0XFE614150, ao=cli1, nelem=4
+     507864| [ 32] | FWK | AO         : obj=0xFE6140A0, nm=cli0
+     507956| [ 33] | FWK | AO         : obj=0xFE614140, nm=cli1
+     507983| [ 34] | FWK | AO         : obj=0xFE6141E0, nm=cli2
+     507997| [ 35] | FWK | AO         : obj=0xFE614280, nm=cli3
+     508011| [ 36] | FWK | STATE      : ao=cli0, obj=0xFE613660, nm=client_idle
+     508033| [ 37] | FWK | STATE      : ao=cli0, obj=0xFE613700, nm=client_waiting
+     508067| [ 38] | FWK | STATE      : ao=cli0, obj=0xFE613780, nm=client_using
+     508091| [ 39] | FWK | STATE      : ao=cli0, obj=0xFE613820, nm=client_paused
+     508139| [ 40] | TIM | INIT       : t=0XFE614190, sig=TOUT_USING
+     508140| [ 41] | TIM | INIT       : t=0XFE6141B0, sig=TOUT_REQ
+     508141| [ 42] | TIM | START      : t=0XFE6141B0, ao=cli1, nt=400, per=0
+     508146| [ 43] | SM  | STATE      : ao=cli1, nxtst=client_idle
+     508147| [ 44] | RQ  | INIT       : q=0XFE6141F0, ao=cli2, nelem=4
+     508148| [ 45] | FWK | AO         : obj=0xFE6140A0, nm=cli0
+     508240| [ 46] | FWK | AO         : obj=0xFE614140, nm=cli1
+     508254| [ 47] | FWK | AO         : obj=0xFE6141E0, nm=cli2
+     508268| [ 48] | FWK | AO         : obj=0xFE614280, nm=cli3
+     508282| [ 49] | FWK | STATE      : ao=cli0, obj=0xFE613660, nm=client_idle
+     508304| [ 50] | FWK | STATE      : ao=cli0, obj=0xFE613700, nm=client_waiting
+     508338| [ 51] | FWK | STATE      : ao=cli0, obj=0xFE613780, nm=client_using
+     508363| [ 52] | FWK | STATE      : ao=cli0, obj=0xFE613820, nm=client_paused
+     508388| [ 53] | TIM | INIT       : t=0XFE614230, sig=TOUT_USING
+     508388| [ 54] | TIM | INIT       : t=0XFE614250, sig=TOUT_REQ
+     508389| [ 55] | TIM | START      : t=0XFE614250, ao=cli2, nt=200, per=0
+     508393| [ 56] | SM  | STATE      : ao=cli2, nxtst=client_idle
+     508394| [ 57] | RQ  | INIT       : q=0XFE614290, ao=cli3, nelem=4
+     508395| [ 58] | FWK | AO         : obj=0xFE6140A0, nm=cli0
+     508487| [ 59] | FWK | AO         : obj=0xFE614140, nm=cli1
+     508514| [ 60] | FWK | AO         : obj=0xFE6141E0, nm=cli2
+     508528| [ 61] | FWK | AO         : obj=0xFE614280, nm=cli3
+     508541| [ 62] | FWK | STATE      : ao=cli0, obj=0xFE613660, nm=client_idle
+     508565| [ 63] | FWK | STATE      : ao=cli0, obj=0xFE613700, nm=client_waiting
+     508591| [ 64] | FWK | STATE      : ao=cli0, obj=0xFE613780, nm=client_using
+     508622| [ 65] | FWK | STATE      : ao=cli0, obj=0xFE613820, nm=client_paused
+     508647| [ 66] | TIM | INIT       : t=0XFE6142D0, sig=TOUT_USING
+     508647| [ 67] | TIM | INIT       : t=0XFE6142F0, sig=TOUT_REQ
+     508648| [ 68] | TIM | START      : t=0XFE6142F0, ao=cli3, nt=200, per=0
+     508652| [ 69] | SM  | STATE      : ao=cli3, nxtst=client_idle
+
+***** Stream Checksum Error
+
+***** May be have lost trace info, sequence are not correlatives
+     514318| [ 73] | SMA | FIFO       : ao=cli3, sig=TOUT_REQ, snr=0XFE6142F0, pid=static, rc=0, nelem=1, nmin=3, nseq=1
+     514320| [ 74] | TIM | TOUT       : t=0XFE614250, sig=TOUT_REQ, ao=cli2
+     514321| [ 75] | TIM | REM        : t=0XFE614250
+     514322| [ 76] | RQ  | FIFO       : q=0XFE6141F0, nelem=1, nmin=3
+     514334| [ 77] | SMA | FIFO       : ao=cli2, sig=TOUT_REQ, snr=0XFE614250, pid=static, rc=0, nelem=1, nmin=3, nseq=1
+     514349| [ 78] | RQ  | GET_LAST   : q=0XFE6141F0
+     514351| [ 79] | SM  | DCH        : ao=cli2, sig=TOUT_REQ, st=client_idle
+     514354| [ 80] | MP  | GET        : mp=0XFE614760, nfree=3, nmin=3
+     514355| [ 81] | RQ  | FIFO       : q=0XFE614350, nelem=1, nmin=3
+     514356| [ 82] | SMA | FIFO       : ao=server, sig=REQ, snr=cli2, pid=1, rc=1, nelem=1, nmin=3, nseq=1
+     514376| [ 83] | SM  | STATE      : ao=cli2, nxtst=client_waiting
+     514378| [ 84] | RQ  | GET_LAST   : q=0XFE614350
+     514379| [ 85] | SM  | DCH        : ao=server, sig=REQ, st=server_idle
+     514381| [ 86] | MP  | GET        : mp=0XFE614760, nfree=2, nmin=2
+     514382| [ 87] | RQ  | FIFO       : q=0XFE6141F0, nelem=1, nmin=3
+     514383| [ 88] | SMA | FIFO       : ao=cli2, sig=START, snr=server, pid=1, rc=1, nelem=1, nmin=3, nseq=2
+     514391| [ 89] | SM  | STATE      : ao=server, nxtst=server_busy
+     514392| [ 90] | MP  | PUT        : mp=0XFE614760, nfree=3
+     514394| [ 91] | RQ  | GET_LAST   : q=0XFE6141F0
+     514395| [ 92] | SM  | DCH        : ao=cli2, sig=START, st=client_waiting
+     514396| [ 93] | TIM | START      : t=0XFE614230, ao=cli2, nt=100, per=0
+     514402| [ 94] | SM  | STATE      : ao=cli2, nxtst=client_using
+     514403| [ 95] | MP  | PUT        : mp=0XFE614760, nfree=4
+     514404| [ 96] | RQ  | GET_LAST   : q=0XFE614290
+     514406| [ 97] | SM  | DCH        : ao=cli3, sig=TOUT_REQ, st=client_idle
+     514407| [ 98] | MP  | GET        : mp=0XFE614760, nfree=3, nmin=2
+     514408| [ 99] | RQ  | FIFO       : q=0XFE614350, nelem=1, nmin=3
+     514408| [100] | SMA | FIFO       : ao=server, sig=REQ, snr=cli3, pid=1, rc=1, nelem=1, nmin=3, nseq=2
+     514413| [101] | SM  | STATE      : ao=cli3, nxtst=client_waiting
+     514415| [102] | RQ  | GET_LAST   : q=0XFE614350
+     514416| [103] | SM  | DCH        : ao=server, sig=REQ, st=server_busy
+     514417| [104] | RQ  | FIFO       : q=0XFE6149A0, nelem=1, nmin=7
+     517691| [105] | TIM | TOUT       : t=0XFE614230, sig=TOUT_USING, ao=cli2
+     517695| [106] | TIM | REM        : t=0XFE614230
+     517708| [107] | RQ  | FIFO       : q=0XFE6141F0, nelem=1, nmin=3
+     517710| [108] | SMA | FIFO       : ao=cli2, sig=TOUT_USING, snr=0XFE614230, pid=static, rc=0, nelem=1, nmin=3, nseq=3
+     517803| [109] | RQ  | GET_LAST   : q=0XFE6141F0
+     517810| [110] | SM  | DCH        : ao=cli2, sig=TOUT_USING, st=client_using
+     517831| [111] | RQ  | FIFO       : q=0XFE614350, nelem=1, nmin=3
+     517834| [112] | SMA | FIFO       : ao=server, sig=DONE, snr=cli2, pid=static, rc=0, nelem=1, nmin=3, nseq=3
+     517870| [113] | TIM | START      : t=0XFE614250, ao=cli2, nt=200, per=0
+     517889| [114] | SM  | STATE      : ao=cli2, nxtst=client_idle
+     517893| [115] | RQ  | GET_LAST   : q=0XFE614350
+     517896| [116] | SM  | DCH        : ao=server, sig=DONE, st=server_busy
+     517900| [117] | RQ  | GET        : q=0XFE6149A0, nelem=0
+     517907| [118] | RQ  | LIFO       : q=0XFE614350, nelem=1, nmin=3
+     517909| [119] | SMA | LIFO       : ao=server, sig=REQ, snr=server, pid=1, rc=2, nelem=1, nmin=3, nseq=4
+     517939| [120] | SM  | STATE      : ao=server, nxtst=server_idle
+     517941| [121] | RQ  | GET_LAST   : q=0XFE614350
+     517944| [122] | SM  | DCH        : ao=server, sig=REQ, st=server_idle
+     517947| [123] | MP  | GET        : mp=0XFE614760, nfree=2, nmin=2
+     517949| [124] | RQ  | FIFO       : q=0XFE614290, nelem=1, nmin=3
+     517951| [125] | SMA | FIFO       : ao=cli3, sig=START, snr=server, pid=1, rc=1, nelem=1, nmin=3, nseq=2
+     517961| [126] | SM  | STATE      : ao=server, nxtst=server_busy
+     517964| [127] | MP  | PUT        : mp=0XFE614760, nfree=3
+     517966| [128] | RQ  | GET_LAST   : q=0XFE614290
+     517968| [129] | SM  | DCH        : ao=cli3, sig=START, st=client_waiting
+     517970| [130] | TIM | START      : t=0XFE6142D0, ao=cli3, nt=200, per=0
+     517979| [131] | SM  | STATE      : ao=cli3, nxtst=client_using
+     517982| [132] | MP  | PUT        : mp=0XFE614760, nfree=4
+     522461| [133] | TIM | TOUT       : t=0XFE6141B0, sig=TOUT_REQ, ao=cli1
+     522466| [134] | TIM | REM        : t=0XFE6141B0
+     522479| [135] | RQ  | FIFO       : q=0XFE614150, nelem=1, nmin=3
+     522482| [136] | SMA | FIFO       : ao=cli1, sig=TOUT_REQ, snr=0XFE6141B0, pid=static, rc=0, nelem=1, nmin=3, nseq=1
+     522540| [137] | RQ  | GET_LAST   : q=0XFE614150
+     522546| [138] | SM  | DCH        : ao=cli1, sig=TOUT_REQ, st=client_idle
+     522550| [139] | MP  | GET        : mp=0XFE614760, nfree=3, nmin=2
+     522553| [140] | RQ  | FIFO       : q=0XFE614350, nelem=1, nmin=3
+     522556| [141] | SMA | FIFO       : ao=server, sig=REQ, snr=cli1, pid=1, rc=1, nelem=1, nmin=3, nseq=5
+     522595| [142] | SM  | STATE      : ao=cli1, nxtst=client_waiting
+     522600| [143] | RQ  | GET_LAST   : q=0XFE614350
+     522602| [144] | SM  | DCH        : ao=server, sig=REQ, st=server_busy
+     522606| [145] | RQ  | FIFO       : q=0XFE6149A0, nelem=1, nmin=7
+
+***** Stream Checksum Error
+
+***** May be have lost trace info, sequence are not correlatives
+     526917| [155] | SM  | DCH        : ao=cli2, sig=TOUT_REQ, st=client_idle
+     526921| [156] | MP  | GET        : mp=0XFE614760, nfree=2, nmin=2
+     526923| [157] | RQ  | FIFO       : q=0XFE614350, nelem=1, nmin=3
+     526926| [158] | SMA | FIFO       : ao=server, sig=REQ, snr=cli2, pid=1, rc=1, nelem=1, nmin=3, nseq=6
+     526975| [159] | SM  | STATE      : ao=cli2, nxtst=client_waiting
+     526979| [160] | RQ  | GET_LAST   : q=0XFE614350
+     526981| [161] | SM  | DCH        : ao=server, sig=REQ, st=server_busy
+     526984| [162] | RQ  | FIFO       : q=0XFE6149A0, nelem=2, nmin=6
+     526987| [163] | RQ  | GET_LAST   : q=0XFE614290
+     526989| [164] | SM  | DCH        : ao=cli3, sig=TOUT_USING, st=client_using
+     526993| [165] | RQ  | FIFO       : q=0XFE614350, nelem=1, nmin=3
+     526995| [166] | SMA | FIFO       : ao=server, sig=DONE, snr=cli3, pid=static, rc=0, nelem=1, nmin=3, nseq=7
+     527008| [167] | TIM | START      : t=0XFE6142F0, ao=cli3, nt=600, per=0
+     527040| [168] | SM  | STATE      : ao=cli3, nxtst=client_idle
+     527045| [169] | RQ  | GET_LAST   : q=0XFE614350
+     527049| [170] | SM  | DCH        : ao=server, sig=DONE, st=server_busy
+     527054| [171] | RQ  | GET        : q=0XFE6149A0, nelem=1
+     527062| [172] | RQ  | LIFO       : q=0XFE614350, nelem=1, nmin=3
+     527065| [173] | SMA | LIFO       : ao=server, sig=REQ, snr=server, pid=1, rc=2, nelem=1, nmin=3, nseq=8
+     527106| [174] | SM  | STATE      : ao=server, nxtst=server_idle
+     527112| [175] | RQ  | GET_LAST   : q=0XFE614350
+     527115| [176] | SM  | DCH        : ao=server, sig=REQ, st=server_idle
+     527122| [177] | MP  | GET        : mp=0XFE614760, nfree=1, nmin=1
+     527128| [178] | RQ  | FIFO       : q=0XFE614150, nelem=1, nmin=3
+     527134| [179] | SMA | FIFO       : ao=cli1, sig=START, snr=server, pid=1, rc=1, nelem=1, nmin=3, nseq=2
+     527166| [180] | SM  | STATE      : ao=server, nxtst=server_busy
+     527174| [181] | MP  | PUT        : mp=0XFE614760, nfree=2
+     527179| [182] | RQ  | GET_LAST   : q=0XFE614150
+     527184| [183] | SM  | DCH        : ao=cli1, sig=START, st=client_waiting
+     527191| [184] | TIM | START      : t=0XFE614190, ao=cli1, nt=100, per=0
+     527225| [185] | SM  | STATE      : ao=cli1, nxtst=client_using
+     527231| [186] | MP  | PUT        : mp=0XFE614760, nfree=3
+
+***** Stream Checksum Error
+
+***** May be have lost trace info, sequence are not correlatives
+     533246| [196] | SM  | DCH        : ao=cli0, sig=TOUT_REQ, st=client_idle
+     533251| [197] | MP  | GET        : mp=0XFE614760, nfree=2, nmin=1
+     533254| [198] | RQ  | FIFO       : q=0XFE614350, nelem=1, nmin=3
+     533256| [199] | SMA | FIFO       : ao=server, sig=REQ, snr=cli0, pid=1, rc=1, nelem=1, nmin=3, nseq=9
+     533297| [200] | SM  | STATE      : ao=cli0, nxtst=client_waiting
+     533301| [201] | RQ  | GET_LAST   : q=0XFE614350
+     533304| [202] | SM  | DCH        : ao=server, sig=REQ, st=server_busy
+     533308| [203] | RQ  | FIFO       : q=0XFE6149A0, nelem=2, nmin=6
+     533312| [204] | RQ  | GET_LAST   : q=0XFE614150
+     533315| [205] | SM  | DCH        : ao=cli1, sig=TOUT_USING, st=client_using
+     533318| [206] | RQ  | FIFO       : q=0XFE614350, nelem=1, nmin=3
+     533321| [207] | SMA | FIFO       : ao=server, sig=DONE, snr=cli1, pid=static, rc=0, nelem=1, nmin=3, nseq=10
+     533337| [208] | TIM | START      : t=0XFE6141B0, ao=cli1, nt=500, per=0
+     533352| [209] | SM  | STATE      : ao=cli1, nxtst=client_idle
+     533356| [210] | RQ  | GET_LAST   : q=0XFE614350
+     533359| [211] | SM  | DCH        : ao=server, sig=DONE, st=server_busy
+     533367| [212] | RQ  | GET        : q=0XFE6149A0, nelem=1
+     533370| [213] | RQ  | LIFO       : q=0XFE614350, nelem=1, nmin=3
+     533372| [214] | SMA | LIFO       : ao=server, sig=REQ, snr=server, pid=1, rc=2, nelem=1, nmin=3, nseq=11
+     533396| [215] | SM  | STATE      : ao=server, nxtst=server_idle
+     533400| [216] | RQ  | GET_LAST   : q=0XFE614350
+     533407| [217] | SM  | DCH        : ao=server, sig=REQ, st=server_idle
+     533410| [218] | MP  | GET        : mp=0XFE614760, nfree=1, nmin=1
+     533412| [219] | RQ  | FIFO       : q=0XFE6141F0, nelem=1, nmin=3
+     533415| [220] | SMA | FIFO       : ao=cli2, sig=START, snr=server, pid=1, rc=1, nelem=1, nmin=3, nseq=4
+     533426| [221] | SM  | STATE      : ao=server, nxtst=server_busy
+     533430| [222] | MP  | PUT        : mp=0XFE614760, nfree=2
+     533433| [223] | RQ  | GET_LAST   : q=0XFE6141F0
+     533436| [224] | SM  | DCH        : ao=cli2, sig=START, st=client_waiting
+     533443| [225] | TIM | START      : t=0XFE614230, ao=cli2, nt=300, per=0
+     533454| [226] | SM  | STATE      : ao=cli2, nxtst=client_using
+     533457| [227] | MP  | PUT        : mp=0XFE614760, nfree=3
+     546546| [228] | TIM | TOUT       : t=0XFE614230, sig=TOUT_USING, ao=cli2
+     546550| [229] | TIM | REM        : t=0XFE614230
+     546565| [230] | RQ  | FIFO       : q=0XFE6141F0, nelem=1, nmin=3
+     546568| [231] | SMA | FIFO       : ao=cli2, sig=TOUT_USING, snr=0XFE614230, pid=static, rc=0, nelem=1, nmin=3, nseq=5
+     546593| [232] | RQ  | GET_LAST   : q=0XFE6141F0
+     546598| [233] | SM  | DCH        : ao=cli2, sig=TOUT_USING, st=client_using
+     546601| [234] | RQ  | FIFO       : q=0XFE614350, nelem=1, nmin=3
+     546603| [235] | SMA | FIFO       : ao=server, sig=DONE, snr=cli2, pid=static, rc=0, nelem=1, nmin=3, nseq=12
+     546640| [236] | TIM | START      : t=0XFE614250, ao=cli2, nt=600, per=0
+     546651| [237] | SM  | STATE      : ao=cli2, nxtst=client_idle
+     546655| [238] | RQ  | GET_LAST   : q=0XFE614350
+     546658| [239] | SM  | DCH        : ao=server, sig=DONE, st=server_busy
+     546662| [240] | RQ  | GET        : q=0XFE6149A0, nelem=0
+     546665| [241] | RQ  | LIFO       : q=0XFE614350, nelem=1, nmin=3
+     546668| [242] | SMA | LIFO       : ao=server, sig=REQ, snr=server, pid=1, rc=2, nelem=1, nmin=3, nseq=13
+     546692| [243] | SM  | STATE      : ao=server, nxtst=server_idle
+     546698| [244] | RQ  | GET_LAST   : q=0XFE614350
+     546700| [245] | SM  | DCH        : ao=server, sig=REQ, st=server_idle
+     546703| [246] | MP  | GET        : mp=0XFE614760, nfree=2, nmin=1
+     546705| [247] | RQ  | FIFO       : q=0XFE6140B0, nelem=1, nmin=3
+     546707| [248] | SMA | FIFO       : ao=cli0, sig=START, snr=server, pid=1, rc=1, nelem=1, nmin=3, nseq=1
+     546719| [249] | SM  | STATE      : ao=server, nxtst=server_busy
+     546721| [250] | MP  | PUT        : mp=0XFE614760, nfree=3
+     546736| [251] | RQ  | GET_LAST   : q=0XFE6140B0
+     546741| [252] | SM  | DCH        : ao=cli0, sig=START, st=client_waiting
+     546743| [253] | TIM | START      : t=0XFE6140F0, ao=cli0, nt=400, per=0
+     546754| [254] | SM  | STATE      : ao=cli0, nxtst=client_using
+     546757| [255] | MP  | PUT        : mp=0XFE614760, nfree=4
+     553662| [  0] | TIM | TOUT       : t=0XFE6141B0, sig=TOUT_REQ, ao=cli1
+     553666| [  1] | TIM | REM        : t=0XFE6141B0
+     553678| [  2] | RQ  | FIFO       : q=0XFE614150, nelem=1, nmin=3
+     553681| [  3] | SMA | FIFO       : ao=cli1, sig=TOUT_REQ, snr=0XFE6141B0, pid=static, rc=0, nelem=1, nmin=3, nseq=3
+     553683| [  4] | TIM | TOUT       : t=0XFE6142F0, sig=TOUT_REQ, ao=cli3
+     553685| [  5] | TIM | REM        : t=0XFE6142F0
+     553688| [  6] | RQ  | FIFO       : q=0XFE614290, nelem=1, nmin=3
+     553690| [  7] | SMA | FIFO       : ao=cli3, sig=TOUT_REQ, snr=0XFE6142F0, pid=static, rc=0, nelem=1, nmin=3, nseq=3
+     553747| [  8] | RQ  | GET_LAST   : q=0XFE614150
+     553753| [  9] | SM  | DCH        : ao=cli1, sig=TOUT_REQ, st=client_idle
+     553758| [ 10] | MP  | GET        : mp=0XFE614760, nfree=3, nmin=1
+     553761| [ 11] | RQ  | FIFO       : q=0XFE614350, nelem=1, nmin=3
+     553763| [ 12] | SMA | FIFO       : ao=server, sig=REQ, snr=cli1, pid=1, rc=1, nelem=1, nmin=3, nseq=14
+     553800| [ 13] | SM  | STATE      : ao=cli1, nxtst=client_waiting
+     553803| [ 14] | RQ  | GET_LAST   : q=0XFE614350
+     553805| [ 15] | SM  | DCH        : ao=server, sig=REQ, st=server_busy
+     553808| [ 16] | RQ  | FIFO       : q=0XFE6149A0, nelem=1, nmin=6
+     553811| [ 17] | RQ  | GET_LAST   : q=0XFE614290
+     553813| [ 18] | SM  | DCH        : ao=cli3, sig=TOUT_REQ, st=client_idle
+     553815| [ 19] | MP  | GET        : mp=0XFE614760, nfree=2, nmin=1
+     553817| [ 20] | RQ  | FIFO       : q=0XFE614350, nelem=1, nmin=3
+     553819| [ 21] | SMA | FIFO       : ao=server, sig=REQ, snr=cli3, pid=1, rc=1, nelem=1, nmin=3, nseq=15
+     553827| [ 22] | SM  | STATE      : ao=cli3, nxtst=client_waiting
+     553829| [ 23] | RQ  | GET_LAST   : q=0XFE614350
+     553832| [ 24] | SM  | DCH        : ao=server, sig=REQ, st=server_busy
+     553834| [ 25] | RQ  | FIFO       : q=0XFE6149A0, nelem=2, nmin=6
+     561050| [ 26] | TIM | TOUT       : t=0XFE6140F0, sig=TOUT_USING, ao=cli0
+     561055| [ 27] | TIM | REM        : t=0XFE6140F0
+     561067| [ 28] | RQ  | FIFO       : q=0XFE6140B0, nelem=1, nmin=3
+     561069| [ 29] | SMA | FIFO       : ao=cli0, sig=TOUT_USING, snr=0XFE6140F0, pid=static, rc=0, nelem=1, nmin=3, nseq=2
+     561126| [ 30] | RQ  | GET_LAST   : q=0XFE6140B0
+     561132| [ 31] | SM  | DCH        : ao=cli0, sig=TOUT_USING, st=client_using
+     561136| [ 32] | RQ  | FIFO       : q=0XFE614350, nelem=1, nmin=3
+     561138| [ 33] | SMA | FIFO       : ao=server, sig=DONE, snr=cli0, pid=static, rc=0, nelem=1, nmin=3, nseq=16
+     561177| [ 34] | TIM | START      : t=0XFE614110, ao=cli0, nt=300, per=0
+     561196| [ 35] | SM  | STATE      : ao=cli0, nxtst=client_idle
+     561200| [ 36] | RQ  | GET_LAST   : q=0XFE614350
+     561203| [ 37] | SM  | DCH        : ao=server, sig=DONE, st=server_busy
+     561206| [ 38] | RQ  | GET        : q=0XFE6149A0, nelem=1
+     561210| [ 39] | RQ  | LIFO       : q=0XFE614350, nelem=1, nmin=3
+     561212| [ 40] | SMA | LIFO       : ao=server, sig=REQ, snr=server, pid=1, rc=2, nelem=1, nmin=3, nseq=17
+     561245| [ 41] | SM  | STATE      : ao=server, nxtst=server_idle
+     561248| [ 42] | RQ  | GET_LAST   : q=0XFE614350
+     561252| [ 43] | SM  | DCH        : ao=server, sig=REQ, st=server_idle
+     561255| [ 44] | MP  | GET        : mp=0XFE614760, nfree=1, nmin=1
+     561257| [ 45] | RQ  | FIFO       : q=0XFE614150, nelem=1, nmin=3
+     561259| [ 46] | SMA | FIFO       : ao=cli1, sig=START, snr=server, pid=1, rc=1, nelem=1, nmin=3, nseq=4
+     561271| [ 47] | SM  | STATE      : ao=server, nxtst=server_busy
+     561274| [ 48] | MP  | PUT        : mp=0XFE614760, nfree=2
+     561278| [ 49] | RQ  | GET_LAST   : q=0XFE614150
+     561281| [ 50] | SM  | DCH        : ao=cli1, sig=START, st=client_waiting
+     561284| [ 51] | TIM | START      : t=0XFE614190, ao=cli1, nt=300, per=0
+     561295| [ 52] | SM  | STATE      : ao=cli1, nxtst=client_using
+     561298| [ 53] | MP  | PUT        : mp=0XFE614760, nfree=3
+     569390| [ 54] | TIM | TOUT       : t=0XFE614250, sig=TOUT_REQ, ao=cli2
+     569394| [ 55] | TIM | REM        : t=0XFE614250
+     569407| [ 56] | RQ  | FIFO       : q=0XFE6141F0, nelem=1, nmin=3
+     569410| [ 57] | SMA | FIFO       : ao=cli2, sig=TOUT_REQ, snr=0XFE614250, pid=static, rc=0, nelem=1, nmin=3, nseq=6
+     569467| [ 58] | RQ  | GET_LAST   : q=0XFE6141F0
+     569473| [ 59] | SM  | DCH        : ao=cli2, sig=TOUT_REQ, st=client_idle
+     569477| [ 60] | MP  | GET        : mp=0XFE614760, nfree=2, nmin=1
+     569480| [ 61] | RQ  | FIFO       : q=0XFE614350, nelem=1, nmin=3
+     569482| [ 62] | SMA | FIFO       : ao=server, sig=REQ, snr=cli2, pid=1, rc=1, nelem=1, nmin=3, nseq=18
+     569517| [ 63] | SM  | STATE      : ao=cli2, nxtst=client_waiting
+     569520| [ 64] | RQ  | GET_LAST   : q=0XFE614350
+     569522| [ 65] | SM  | DCH        : ao=server, sig=REQ, st=server_busy
+     569525| [ 66] | RQ  | FIFO       : q=0XFE6149A0, nelem=2, nmin=6
+
+***** Stream Checksum Error
+
+***** May be have lost trace info, sequence are not correlatives
+     573759| [ 76] | SM  | DCH        : ao=cli0, sig=TOUT_REQ, st=client_idle
+     573763| [ 77] | MP  | GET        : mp=0XFE614760, nfree=1, nmin=1
+     573766| [ 78] | RQ  | FIFO       : q=0XFE614350, nelem=1, nmin=3
+     573768| [ 79] | SMA | FIFO       : ao=server, sig=REQ, snr=cli0, pid=1, rc=1, nelem=1, nmin=3, nseq=19
+     573801| [ 80] | SM  | STATE      : ao=cli0, nxtst=client_waiting
+     573804| [ 81] | RQ  | GET_LAST   : q=0XFE614350
+     573806| [ 82] | SM  | DCH        : ao=server, sig=REQ, st=server_busy
+     573809| [ 83] | RQ  | FIFO       : q=0XFE6149A0, nelem=3, nmin=5
+     573812| [ 84] | RQ  | GET_LAST   : q=0XFE614150
+     573814| [ 85] | SM  | DCH        : ao=cli1, sig=TOUT_USING, st=client_using
+     573817| [ 86] | RQ  | FIFO       : q=0XFE614350, nelem=1, nmin=3
+     573819| [ 87] | SMA | FIFO       : ao=server, sig=DONE, snr=cli1, pid=static, rc=0, nelem=1, nmin=3, nseq=20
+     573828| [ 88] | TIM | START      : t=0XFE6141B0, ao=cli1, nt=500, per=0
+     573896| [ 89] | SM  | STATE      : ao=cli1, nxtst=client_idle
+     573901| [ 90] | RQ  | GET_LAST   : q=0XFE614350
+     573904| [ 91] | SM  | DCH        : ao=server, sig=DONE, st=server_busy
+     573908| [ 92] | RQ  | GET        : q=0XFE6149A0, nelem=2
+     573911| [ 93] | RQ  | LIFO       : q=0XFE614350, nelem=1, nmin=3
+     573914| [ 94] | SMA | LIFO       : ao=server, sig=REQ, snr=server, pid=1, rc=2, nelem=1, nmin=3, nseq=21
+     573952| [ 95] | SM  | STATE      : ao=server, nxtst=server_idle
+     573956| [ 96] | RQ  | GET_LAST   : q=0XFE614350
+     573960| [ 97] | SM  | DCH        : ao=server, sig=REQ, st=server_idle
+     573963| [ 98] | MP  | GET        : mp=0XFE614760, nfree=0, nmin=0
+     573966| [ 99] | RQ  | FIFO       : q=0XFE614290, nelem=1, nmin=3
+     573969| [100] | SMA | FIFO       : ao=cli3, sig=START, snr=server, pid=1, rc=1, nelem=1, nmin=3, nseq=4
+     573984| [101] | SM  | STATE      : ao=server, nxtst=server_busy
+     573987| [102] | MP  | PUT        : mp=0XFE614760, nfree=1
+     573990| [103] | RQ  | GET_LAST   : q=0XFE614290
+     573993| [104] | SM  | DCH        : ao=cli3, sig=START, st=client_waiting
+     573997| [105] | TIM | START      : t=0XFE6142D0, ao=cli3, nt=200, per=0
+     574010| [106] | SM  | STATE      : ao=cli3, nxtst=client_using
+     574014| [107] | MP  | PUT        : mp=0XFE614760, nfree=2
+     582320| [108] | TIM | TOUT       : t=0XFE6142D0, sig=TOUT_USING, ao=cli3
+     582325| [109] | TIM | REM        : t=0XFE6142D0
+     582343| [110] | RQ  | FIFO       : q=0XFE614290, nelem=1, nmin=3
+     582351| [111] | SMA | FIFO       : ao=cli3, sig=TOUT_USING, snr=0XFE6142D0, pid=static, rc=0, nelem=1, nmin=3, nseq=5
+     582383| [112] | RQ  | GET_LAST   : q=0XFE614290
+     582389| [113] | SM  | DCH        : ao=cli3, sig=TOUT_USING, st=client_using
+     582394| [114] | RQ  | FIFO       : q=0XFE614350, nelem=1, nmin=3
+     582397| [115] | SMA | FIFO       : ao=server, sig=DONE, snr=cli3, pid=static, rc=0, nelem=1, nmin=3, nseq=22
+     582467| [116] | TIM | START      : t=0XFE6142F0, ao=cli3, nt=400, per=0
+     582488| [117] | SM  | STATE      : ao=cli3, nxtst=client_idle
+     582493| [118] | RQ  | GET_LAST   : q=0XFE614350
+     582497| [119] | SM  | DCH        : ao=server, sig=DONE, st=server_busy
+     582501| [120] | RQ  | GET        : q=0XFE6149A0, nelem=1
+     582505| [121] | RQ  | LIFO       : q=0XFE614350, nelem=1, nmin=3
+     582508| [122] | SMA | LIFO       : ao=server, sig=REQ, snr=server, pid=1, rc=2, nelem=1, nmin=3, nseq=23
+     582538| [123] | SM  | STATE      : ao=server, nxtst=server_idle
+     582542| [124] | RQ  | GET_LAST   : q=0XFE614350
+     582545| [125] | SM  | DCH        : ao=server, sig=REQ, st=server_idle
+     582549| [126] | MP  | GET        : mp=0XFE614760, nfree=1, nmin=0
+     582552| [127] | RQ  | FIFO       : q=0XFE6141F0, nelem=1, nmin=3
+     582555| [128] | SMA | FIFO       : ao=cli2, sig=START, snr=server, pid=1, rc=1, nelem=1, nmin=3, nseq=7
+     582579| [129] | SM  | STATE      : ao=server, nxtst=server_busy
+     582584| [130] | MP  | PUT        : mp=0XFE614760, nfree=2
+     582587| [131] | RQ  | GET_LAST   : q=0XFE6141F0
+     582590| [132] | SM  | DCH        : ao=cli2, sig=START, st=client_waiting
+     582593| [133] | TIM | START      : t=0XFE614230, ao=cli2, nt=400, per=0
+     582611| [134] | SM  | STATE      : ao=cli2, nxtst=client_using
+     582614| [135] | MP  | PUT        : mp=0XFE614760, nfree=3
+     594225| [136] | TIM | TOUT       : t=0XFE6141B0, sig=TOUT_REQ, ao=cli1
+     594228| [137] | TIM | REM        : t=0XFE6141B0
+     594239| [138] | RQ  | FIFO       : q=0XFE614150, nelem=1, nmin=3
+     594241| [139] | SMA | FIFO       : ao=cli1, sig=TOUT_REQ, snr=0XFE6141B0, pid=static, rc=0, nelem=1, nmin=3, nseq=5
+     594286| [140] | RQ  | GET_LAST   : q=0XFE614150
+     594290| [141] | SM  | DCH        : ao=cli1, sig=TOUT_REQ, st=client_idle
+     594293| [142] | MP  | GET        : mp=0XFE614760, nfree=2, nmin=0
+     594295| [143] | RQ  | FIFO       : q=0XFE614350, nelem=1, nmin=3
+     594297| [144] | SMA | FIFO       : ao=server, sig=REQ, snr=cli1, pid=1, rc=1, nelem=1, nmin=3, nseq=24
+     594332| [145] | SM  | STATE      : ao=cli1, nxtst=client_waiting
+     594335| [146] | RQ  | GET_LAST   : q=0XFE614350
+     594337| [147] | SM  | DCH        : ao=server, sig=REQ, st=server_busy
+     594339| [148] | RQ  | FIFO       : q=0XFE6149A0, nelem=2, nmin=5
+
+***** Stream Checksum Error
+
+***** May be have lost trace info, sequence are not correlatives
+     598071| [158] | SM  | DCH        : ao=cli2, sig=TOUT_USING, st=client_using
+     598077| [159] | RQ  | FIFO       : q=0XFE614350, nelem=1, nmin=3
+     598080| [160] | SMA | FIFO       : ao=server, sig=DONE, snr=cli2, pid=static, rc=0, nelem=1, nmin=3, nseq=25
+     598118| [161] | TIM | START      : t=0XFE614250, ao=cli2, nt=500, per=0
+     598132| [162] | SM  | STATE      : ao=cli2, nxtst=client_idle
+     598136| [163] | RQ  | GET_LAST   : q=0XFE614350
+     598139| [164] | SM  | DCH        : ao=server, sig=DONE, st=server_busy
+     598143| [165] | RQ  | GET        : q=0XFE6149A0, nelem=1
+     598146| [166] | RQ  | LIFO       : q=0XFE614350, nelem=1, nmin=3
+     598149| [167] | SMA | LIFO       : ao=server, sig=REQ, snr=server, pid=1, rc=2, nelem=1, nmin=3, nseq=26
+     598187| [168] | SM  | STATE      : ao=server, nxtst=server_idle
+     598191| [169] | RQ  | GET_LAST   : q=0XFE614350
+     598194| [170] | SM  | DCH        : ao=server, sig=REQ, st=server_idle
+     598198| [171] | MP  | GET        : mp=0XFE614760, nfree=1, nmin=0
+     598201| [172] | RQ  | FIFO       : q=0XFE6140B0, nelem=1, nmin=3
+     598204| [173] | SMA | FIFO       : ao=cli0, sig=START, snr=server, pid=1, rc=1, nelem=1, nmin=3, nseq=3
+     598220| [174] | SM  | STATE      : ao=server, nxtst=server_busy
+     598223| [175] | MP  | PUT        : mp=0XFE614760, nfree=2
+     598226| [176] | RQ  | GET_LAST   : q=0XFE6140B0
+     598229| [177] | SM  | DCH        : ao=cli0, sig=START, st=client_waiting
+     598232| [178] | TIM | START      : t=0XFE6140F0, ao=cli0, nt=100, per=0
+     598248| [179] | SM  | STATE      : ao=cli0, nxtst=client_using
+     598251| [180] | MP  | PUT        : mp=0XFE614760, nfree=3
+     598254| [181] | RQ  | GET_LAST   : q=0XFE614290
+     598257| [182] | SM  | DCH        : ao=cli3, sig=TOUT_REQ, st=client_idle
+     598261| [183] | MP  | GET        : mp=0XFE614760, nfree=2, nmin=0
+     598264| [184] | RQ  | FIFO       : q=0XFE614350, nelem=1, nmin=3
+     598266| [185] | SMA | FIFO       : ao=server, sig=REQ, snr=cli3, pid=1, rc=1, nelem=1, nmin=3, nseq=27
+     598281| [186] | SM  | STATE      : ao=cli3, nxtst=client_waiting
+     598285| [187] | RQ  | GET_LAST   : q=0XFE614350
+     598288| [188] | SM  | DCH        : ao=server, sig=REQ, st=server_busy
+     598291| [189] | RQ  | FIFO       : q=0XFE6149A0, nelem=2, nmin=5
+     602903| [190] | TIM | TOUT       : t=0XFE6140F0, sig=TOUT_USING, ao=cli0
+     602907| [191] | TIM | REM        : t=0XFE6140F0
+     602919| [192] | RQ  | FIFO       : q=0XFE6140B0, nelem=1, nmin=3
+     602922| [193] | SMA | FIFO       : ao=cli0, sig=TOUT_USING, snr=0XFE6140F0, pid=static, rc=0, nelem=1, nmin=3, nseq=4
+     602978| [194] | RQ  | GET_LAST   : q=0XFE6140B0
+     602984| [195] | SM  | DCH        : ao=cli0, sig=TOUT_USING, st=client_using
+     602988| [196] | RQ  | FIFO       : q=0XFE614350, nelem=1, nmin=3
+     602990| [197] | SMA | FIFO       : ao=server, sig=DONE, snr=cli0, pid=static, rc=0, nelem=1, nmin=3, nseq=28
+     603028| [198] | TIM | START      : t=0XFE614110, ao=cli0, nt=200, per=0
+     603045| [199] | SM  | STATE      : ao=cli0, nxtst=client_idle
+     603048| [200] | RQ  | GET_LAST   : q=0XFE614350
+     603052| [201] | SM  | DCH        : ao=server, sig=DONE, st=server_busy
+     603055| [202] | RQ  | GET        : q=0XFE6149A0, nelem=1
+     603063| [203] | RQ  | LIFO       : q=0XFE614350, nelem=1, nmin=3
+     603065| [204] | SMA | LIFO       : ao=server, sig=REQ, snr=server, pid=1, rc=2, nelem=1, nmin=3, nseq=29
+     603094| [205] | SM  | STATE      : ao=server, nxtst=server_idle
+     603097| [206] | RQ  | GET_LAST   : q=0XFE614350
+     603099| [207] | SM  | DCH        : ao=server, sig=REQ, st=server_idle
+     603102| [208] | MP  | GET        : mp=0XFE614760, nfree=1, nmin=0
+     603105| [209] | RQ  | FIFO       : q=0XFE614150, nelem=1, nmin=3
+     603106| [210] | SMA | FIFO       : ao=cli1, sig=START, snr=server, pid=1, rc=1, nelem=1, nmin=3, nseq=6
+     603116| [211] | SM  | STATE      : ao=server, nxtst=server_busy
+     603119| [212] | MP  | PUT        : mp=0XFE614760, nfree=2
+     603121| [213] | RQ  | GET_LAST   : q=0XFE614150
+     603123| [214] | SM  | DCH        : ao=cli1, sig=START, st=client_waiting
+     603125| [215] | TIM | START      : t=0XFE614190, ao=cli1, nt=200, per=0
+     603135| [216] | SM  | STATE      : ao=cli1, nxtst=client_using
+     603137| [217] | MP  | PUT        : mp=0XFE614760, nfree=3
+
+***** Stream Checksum Error
+
+***** May be have lost trace info, sequence are not correlatives
+     611117| [227] | SM  | DCH        : ao=cli0, sig=TOUT_REQ, st=client_idle
+     611121| [228] | MP  | GET        : mp=0XFE614760, nfree=2, nmin=0
+     611124| [229] | RQ  | FIFO       : q=0XFE614350, nelem=1, nmin=3
+     611126| [230] | SMA | FIFO       : ao=server, sig=REQ, snr=cli0, pid=1, rc=1, nelem=1, nmin=3, nseq=30
+     611175| [231] | SM  | STATE      : ao=cli0, nxtst=client_waiting
+     611179| [232] | RQ  | GET_LAST   : q=0XFE614350
+     611181| [233] | SM  | DCH        : ao=server, sig=REQ, st=server_busy
+     611184| [234] | RQ  | FIFO       : q=0XFE6149A0, nelem=2, nmin=5
+     611187| [235] | RQ  | GET_LAST   : q=0XFE614150
+     611189| [236] | SM  | DCH        : ao=cli1, sig=TOUT_USING, st=client_using
+     611192| [237] | RQ  | FIFO       : q=0XFE614350, nelem=1, nmin=3
+     611194| [238] | SMA | FIFO       : ao=server, sig=DONE, snr=cli1, pid=static, rc=0, nelem=1, nmin=3, nseq=31
+     611205| [239] | TIM | START      : t=0XFE6141B0, ao=cli1, nt=600, per=0
+     611229| [240] | SM  | STATE      : ao=cli1, nxtst=client_idle
+     611235| [241] | RQ  | GET_LAST   : q=0XFE614350
+     611240| [242] | SM  | DCH        : ao=server, sig=DONE, st=server_busy
+     611245| [243] | RQ  | GET        : q=0XFE6149A0, nelem=1
+     611249| [244] | RQ  | LIFO       : q=0XFE614350, nelem=1, nmin=3
+     611252| [245] | SMA | LIFO       : ao=server, sig=REQ, snr=server, pid=1, rc=2, nelem=1, nmin=3, nseq=32
+     611301| [246] | SM  | STATE      : ao=server, nxtst=server_idle
+     611307| [247] | RQ  | GET_LAST   : q=0XFE614350
+     611315| [248] | SM  | DCH        : ao=server, sig=REQ, st=server_idle
+     611318| [249] | MP  | GET        : mp=0XFE614760, nfree=1, nmin=0
+     611321| [250] | RQ  | FIFO       : q=0XFE614290, nelem=1, nmin=3
+     611324| [251] | SMA | FIFO       : ao=cli3, sig=START, snr=server, pid=1, rc=1, nelem=1, nmin=3, nseq=6
+     611345| [252] | SM  | STATE      : ao=server, nxtst=server_busy
+     611349| [253] | MP  | PUT        : mp=0XFE614760, nfree=2
+     611353| [254] | RQ  | GET_LAST   : q=0XFE614290
+     611356| [255] | SM  | DCH        : ao=cli3, sig=START, st=client_waiting
+     611361| [  0] | TIM | START      : t=0XFE6142D0, ao=cli3, nt=100, per=0
+     611415| [  1] | SM  | STATE      : ao=cli3, nxtst=client_using
+     611422| [  2] | MP  | PUT        : mp=0XFE614760, nfree=3
+     616368| [  3] | TIM | TOUT       : t=0XFE6142D0, sig=TOUT_USING, ao=cli3
+     616372| [  4] | TIM | REM        : t=0XFE6142D0
+     616384| [  5] | RQ  | FIFO       : q=0XFE614290, nelem=1, nmin=3
+     616388| [  6] | SMA | FIFO       : ao=cli3, sig=TOUT_USING, snr=0XFE6142D0, pid=static, rc=0, nelem=1, nmin=3, nseq=7
+     616417| [  7] | RQ  | GET_LAST   : q=0XFE614290
+     616422| [  8] | SM  | DCH        : ao=cli3, sig=TOUT_USING, st=client_using
+     616427| [  9] | RQ  | FIFO       : q=0XFE614350, nelem=1, nmin=3
+     616430| [ 10] | SMA | FIFO       : ao=server, sig=DONE, snr=cli3, pid=static, rc=0, nelem=1, nmin=3, nseq=33
+     616469| [ 11] | TIM | START      : t=0XFE6142F0, ao=cli3, nt=300, per=0
+     616490| [ 12] | SM  | STATE      : ao=cli3, nxtst=client_idle
+     616494| [ 13] | RQ  | GET_LAST   : q=0XFE614350
+     616498| [ 14] | SM  | DCH        : ao=server, sig=DONE, st=server_busy
+     616505| [ 15] | RQ  | GET        : q=0XFE6149A0, nelem=0
+     616508| [ 16] | RQ  | LIFO       : q=0XFE614350, nelem=1, nmin=3
+     616510| [ 17] | SMA | LIFO       : ao=server, sig=REQ, snr=server, pid=1, rc=2, nelem=1, nmin=3, nseq=34
+     616535| [ 18] | SM  | STATE      : ao=server, nxtst=server_idle
+     616538| [ 19] | RQ  | GET_LAST   : q=0XFE614350
+     616541| [ 20] | SM  | DCH        : ao=server, sig=REQ, st=server_idle
+     616549| [ 21] | MP  | GET        : mp=0XFE614760, nfree=2, nmin=0
+     616552| [ 22] | RQ  | FIFO       : q=0XFE6140B0, nelem=1, nmin=3
+     616554| [ 23] | SMA | FIFO       : ao=cli0, sig=START, snr=server, pid=1, rc=1, nelem=1, nmin=3, nseq=5
+     616565| [ 24] | SM  | STATE      : ao=server, nxtst=server_busy
+     616569| [ 25] | MP  | PUT        : mp=0XFE614760, nfree=3
+     616572| [ 26] | RQ  | GET_LAST   : q=0XFE6140B0
+     616575| [ 27] | SM  | DCH        : ao=cli0, sig=START, st=client_waiting
+     616582| [ 28] | TIM | START      : t=0XFE6140F0, ao=cli0, nt=500, per=0
+     616594| [ 29] | SM  | STATE      : ao=cli0, nxtst=client_using
+     616598| [ 30] | MP  | PUT        : mp=0XFE614760, nfree=4
+     620585| [ 31] | TIM | TOUT       : t=0XFE614250, sig=TOUT_REQ, ao=cli2
+     620591| [ 32] | TIM | REM        : t=0XFE614250
+     620607| [ 33] | RQ  | FIFO       : q=0XFE6141F0, nelem=1, nmin=3
+     620609| [ 34] | SMA | FIFO       : ao=cli2, sig=TOUT_REQ, snr=0XFE614250, pid=static, rc=0, nelem=1, nmin=3, nseq=8
+     620675| [ 35] | RQ  | GET_LAST   : q=0XFE6141F0
+     620682| [ 36] | SM  | DCH        : ao=cli2, sig=TOUT_REQ, st=client_idle
+     620686| [ 37] | MP  | GET        : mp=0XFE614760, nfree=3, nmin=0
+     620689| [ 38] | RQ  | FIFO       : q=0XFE614350, nelem=1, nmin=3
+     620691| [ 39] | SMA | FIFO       : ao=server, sig=REQ, snr=cli2, pid=1, rc=1, nelem=1, nmin=3, nseq=35
+     620739| [ 40] | SM  | STATE      : ao=cli2, nxtst=client_waiting
+     620742| [ 41] | RQ  | GET_LAST   : q=0XFE614350
+     620745| [ 42] | SM  | DCH        : ao=server, sig=REQ, st=server_busy
+     620747| [ 43] | RQ  | FIFO       : q=0XFE6149A0, nelem=1, nmin=5
+     629270| [ 44] | TIM | TOUT       : t=0XFE6142F0, sig=TOUT_REQ, ao=cli3
+     629275| [ 45] | TIM | REM        : t=0XFE6142F0
+     629293| [ 46] | RQ  | FIFO       : q=0XFE614290, nelem=1, nmin=3
+     629296| [ 47] | SMA | FIFO       : ao=cli3, sig=TOUT_REQ, snr=0XFE6142F0, pid=static, rc=0, nelem=1, nmin=3, nseq=8
+     629337| [ 48] | RQ  | GET_LAST   : q=0XFE614290
+     629346| [ 49] | SM  | DCH        : ao=cli3, sig=TOUT_REQ, st=client_idle
+     629352| [ 50] | MP  | GET        : mp=0XFE614760, nfree=2, nmin=0
+     629404| [ 51] | RQ  | FIFO       : q=0XFE614350, nelem=1, nmin=3
+     629411| [ 52] | SMA | FIFO       : ao=server, sig=REQ, snr=cli3, pid=1, rc=1, nelem=1, nmin=3, nseq=36
+     629475| [ 53] | SM  | STATE      : ao=cli3, nxtst=client_waiting
+     629484| [ 54] | RQ  | GET_LAST   : q=0XFE614350
+     629489| [ 55] | SM  | DCH        : ao=server, sig=REQ, st=server_busy
+     629496| [ 56] | RQ  | FIFO       : q=0XFE6149A0, nelem=2, nmin=5
+
+***** Stream Checksum Error
+
+***** May be have lost trace info, sequence are not correlatives
+     637287| [ 66] | SM  | DCH        : ao=cli0, sig=TOUT_USING, st=client_using
+     637291| [ 67] | RQ  | FIFO       : q=0XFE614350, nelem=1, nmin=3
+     637293| [ 68] | SMA | FIFO       : ao=server, sig=DONE, snr=cli0, pid=static, rc=0, nelem=1, nmin=3, nseq=37
+     637329| [ 69] | TIM | START      : t=0XFE614110, ao=cli0, nt=500, per=0
+     637352| [ 70] | SM  | STATE      : ao=cli0, nxtst=client_idle
+     637356| [ 71] | RQ  | GET_LAST   : q=0XFE614350
+     637360| [ 72] | SM  | DCH        : ao=server, sig=DONE, st=server_busy
+     637363| [ 73] | RQ  | GET        : q=0XFE6149A0, nelem=1
+     637371| [ 74] | RQ  | LIFO       : q=0XFE614350, nelem=1, nmin=3
+     637373| [ 75] | SMA | LIFO       : ao=server, sig=REQ, snr=server, pid=1, rc=2, nelem=1, nmin=3, nseq=38
+     637391| [ 76] | SM  | STATE      : ao=server, nxtst=server_idle
+     637394| [ 77] | RQ  | GET_LAST   : q=0XFE614350
+     637396| [ 78] | SM  | DCH        : ao=server, sig=REQ, st=server_idle
+     637399| [ 79] | MP  | GET        : mp=0XFE614760, nfree=1, nmin=0
+     637402| [ 80] | RQ  | FIFO       : q=0XFE6141F0, nelem=1, nmin=3
+     637404| [ 81] | SMA | FIFO       : ao=cli2, sig=START, snr=server, pid=1, rc=1, nelem=1, nmin=3, nseq=9
+     637414| [ 82] | SM  | STATE      : ao=server, nxtst=server_busy
+     637417| [ 83] | MP  | PUT        : mp=0XFE614760, nfree=2
+     637419| [ 84] | RQ  | GET_LAST   : q=0XFE614150
+     637422| [ 85] | SM  | DCH        : ao=cli1, sig=TOUT_REQ, st=client_idle
+     637424| [ 86] | MP  | GET        : mp=0XFE614760, nfree=1, nmin=0
+     637426| [ 87] | RQ  | FIFO       : q=0XFE614350, nelem=1, nmin=3
+     637428| [ 88] | SMA | FIFO       : ao=server, sig=REQ, snr=cli1, pid=1, rc=1, nelem=1, nmin=3, nseq=39
+     637438| [ 89] | SM  | STATE      : ao=cli1, nxtst=client_waiting
+     637440| [ 90] | RQ  | GET_LAST   : q=0XFE614350
+     637443| [ 91] | SM  | DCH        : ao=server, sig=REQ, st=server_busy
+     637445| [ 92] | RQ  | FIFO       : q=0XFE6149A0, nelem=2, nmin=5
+     637448| [ 93] | RQ  | GET_LAST   : q=0XFE6141F0
+     637450| [ 94] | SM  | DCH        : ao=cli2, sig=START, st=client_waiting
+     637452| [ 95] | TIM | START      : t=0XFE614230, ao=cli2, nt=300, per=0
+     637462| [ 96] | SM  | STATE      : ao=cli2, nxtst=client_using
+     637464| [ 97] | MP  | PUT        : mp=0XFE614760, nfree=2
+     649197| [ 98] | TIM | TOUT       : t=0XFE614230, sig=TOUT_USING, ao=cli2
+     649201| [ 99] | TIM | REM        : t=0XFE614230
+     649214| [100] | RQ  | FIFO       : q=0XFE6141F0, nelem=1, nmin=3
+     649216| [101] | SMA | FIFO       : ao=cli2, sig=TOUT_USING, snr=0XFE614230, pid=static, rc=0, nelem=1, nmin=3, nseq=10
+     649229| [102] | RQ  | GET_LAST   : q=0XFE6141F0
+     649232| [103] | SM  | DCH        : ao=cli2, sig=TOUT_USING, st=client_using
+     649235| [104] | RQ  | FIFO       : q=0XFE614350, nelem=1, nmin=3
+     649237| [105] | SMA | FIFO       : ao=server, sig=DONE, snr=cli2, pid=static, rc=0, nelem=1, nmin=3, nseq=40
+     649261| [106] | TIM | START      : t=0XFE614250, ao=cli2, nt=300, per=0
+     649277| [107] | SM  | STATE      : ao=cli2, nxtst=client_idle
+     649280| [108] | RQ  | GET_LAST   : q=0XFE614350
+     649282| [109] | SM  | DCH        : ao=server, sig=DONE, st=server_busy
+     649285| [110] | RQ  | GET        : q=0XFE6149A0, nelem=1
+     649287| [111] | RQ  | LIFO       : q=0XFE614350, nelem=1, nmin=3
+     649289| [112] | SMA | LIFO       : ao=server, sig=REQ, snr=server, pid=1, rc=2, nelem=1, nmin=3, nseq=41
+     649313| [113] | SM  | STATE      : ao=server, nxtst=server_idle
+     649316| [114] | RQ  | GET_LAST   : q=0XFE614350
+     649318| [115] | SM  | DCH        : ao=server, sig=REQ, st=server_idle
+     649320| [116] | MP  | GET        : mp=0XFE614760, nfree=1, nmin=0
+     649323| [117] | RQ  | FIFO       : q=0XFE614290, nelem=1, nmin=3
+     649324| [118] | SMA | FIFO       : ao=cli3, sig=START, snr=server, pid=1, rc=1, nelem=1, nmin=3, nseq=9
+     649337| [119] | SM  | STATE      : ao=server, nxtst=server_busy
+     649340| [120] | MP  | PUT        : mp=0XFE614760, nfree=2
+     649342| [121] | RQ  | GET_LAST   : q=0XFE614290
+     649344| [122] | SM  | DCH        : ao=cli3, sig=START, st=client_waiting
+     649346| [123] | TIM | START      : t=0XFE6142D0, ao=cli3, nt=400, per=0
+     649358| [124] | SM  | STATE      : ao=cli3, nxtst=client_using
+     649361| [125] | MP  | PUT        : mp=0XFE614760, nfree=3
+     656773| [126] | TIM | TOUT       : t=0XFE614110, sig=TOUT_REQ, ao=cli0
+     656777| [127] | TIM | REM        : t=0XFE614110
+     656788| [128] | RQ  | FIFO       : q=0XFE6140B0, nelem=1, nmin=3
+     656791| [129] | SMA | FIFO       : ao=cli0, sig=TOUT_REQ, snr=0XFE614110, pid=static, rc=0, nelem=1, nmin=3, nseq=6
+     656823| [130] | RQ  | GET_LAST   : q=0XFE6140B0
+     656827| [131] | SM  | DCH        : ao=cli0, sig=TOUT_REQ, st=client_idle
+     656848| [132] | MP  | GET        : mp=0XFE614760, nfree=2, nmin=0
+     656850| [133] | RQ  | FIFO       : q=0XFE614350, nelem=1, nmin=3
+     656852| [134] | SMA | FIFO       : ao=server, sig=REQ, snr=cli0, pid=1, rc=1, nelem=1, nmin=3, nseq=42
+     656878| [135] | SM  | STATE      : ao=cli0, nxtst=client_waiting
+     656881| [136] | RQ  | GET_LAST   : q=0XFE614350
+     656882| [137] | SM  | DCH        : ao=server, sig=REQ, st=server_busy
+     656884| [138] | RQ  | FIFO       : q=0XFE6149A0, nelem=2, nmin=5
+     660447| [139] | TIM | TOUT       : t=0XFE614250, sig=TOUT_REQ, ao=cli2
+     660453| [140] | TIM | REM        : t=0XFE614250
+     660478| [141] | RQ  | FIFO       : q=0XFE6141F0, nelem=1, nmin=3
+     660489| [142] | SMA | FIFO       : ao=cli2, sig=TOUT_REQ, snr=0XFE614250, pid=static, rc=0, nelem=1, nmin=3, nseq=11
+     660523| [143] | RQ  | GET_LAST   : q=0XFE6141F0
+     660542| [144] | SM  | DCH        : ao=cli2, sig=TOUT_REQ, st=client_idle
+     660548| [145] | MP  | GET        : mp=0XFE614760, nfree=1, nmin=0
+     660553| [146] | RQ  | FIFO       : q=0XFE614350, nelem=1, nmin=3
+     660556| [147] | SMA | FIFO       : ao=server, sig=REQ, snr=cli2, pid=1, rc=1, nelem=1, nmin=3, nseq=43
+     660608| [148] | SM  | STATE      : ao=cli2, nxtst=client_waiting
+     660612| [149] | RQ  | GET_LAST   : q=0XFE614350
+     660614| [150] | SM  | DCH        : ao=server, sig=REQ, st=server_busy
+     660617| [151] | RQ  | FIFO       : q=0XFE6149A0, nelem=3, nmin=5
+     665800| [152] | TIM | TOUT       : t=0XFE6142D0, sig=TOUT_USING, ao=cli3
+     665804| [153] | TIM | REM        : t=0XFE6142D0
+     665816| [154] | RQ  | FIFO       : q=0XFE614290, nelem=1, nmin=3
+     665818| [155] | SMA | FIFO       : ao=cli3, sig=TOUT_USING, snr=0XFE6142D0, pid=static, rc=0, nelem=1, nmin=3, nseq=10
+     665843| [156] | RQ  | GET_LAST   : q=0XFE614290
+     665853| [157] | SM  | DCH        : ao=cli3, sig=TOUT_USING, st=client_using
+     665874| [158] | RQ  | FIFO       : q=0XFE614350, nelem=1, nmin=3
+     665877| [159] | SMA | FIFO       : ao=server, sig=DONE, snr=cli3, pid=static, rc=0, nelem=1, nmin=3, nseq=44
+     665908| [160] | TIM | START      : t=0XFE6142F0, ao=cli3, nt=500, per=0
+     665917| [161] | SM  | STATE      : ao=cli3, nxtst=client_idle
+     665920| [162] | RQ  | GET_LAST   : q=0XFE614350
+     665922| [163] | SM  | DCH        : ao=server, sig=DONE, st=server_busy
+     665924| [164] | RQ  | GET        : q=0XFE6149A0, nelem=2
+     665927| [165] | RQ  | LIFO       : q=0XFE614350, nelem=1, nmin=3
+     665943| [166] | SMA | LIFO       : ao=server, sig=REQ, snr=server, pid=1, rc=2, nelem=1, nmin=3, nseq=45
+     665962| [167] | SM  | STATE      : ao=server, nxtst=server_idle
+     665966| [168] | RQ  | GET_LAST   : q=0XFE614350
+     665973| [169] | SM  | DCH        : ao=server, sig=REQ, st=server_idle
+     665975| [170] | MP  | GET        : mp=0XFE614760, nfree=0, nmin=0
+     665992| [171] | RQ  | FIFO       : q=0XFE614150, nelem=1, nmin=3
+     665993| [172] | SMA | FIFO       : ao=cli1, sig=START, snr=server, pid=1, rc=1, nelem=1, nmin=3, nseq=7
+     666003| [173] | SM  | STATE      : ao=server, nxtst=server_busy
+     666005| [174] | MP  | PUT        : mp=0XFE614760, nfree=1
+     666007| [175] | RQ  | GET_LAST   : q=0XFE614150
+     666009| [176] | SM  | DCH        : ao=cli1, sig=START, st=client_waiting
+     666011| [177] | TIM | START      : t=0XFE614190, ao=cli1, nt=500, per=0
+     666019| [178] | SM  | STATE      : ao=cli1, nxtst=client_using
+     666021| [179] | MP  | PUT        : mp=0XFE614760, nfree=2
+
+***** Stream Checksum Error
+
+***** May be have lost trace info, sequence are not correlatives
+     684282| [189] | SM  | DCH        : ao=cli1, sig=TOUT_USING, st=client_using
+     684286| [190] | RQ  | FIFO       : q=0XFE614350, nelem=1, nmin=3
+     684288| [191] | SMA | FIFO       : ao=server, sig=DONE, snr=cli1, pid=static, rc=0, nelem=1, nmin=3, nseq=46
+     684329| [192] | TIM | START      : t=0XFE6141B0, ao=cli1, nt=500, per=0
+     684349| [193] | SM  | STATE      : ao=cli1, nxtst=client_idle
+     684353| [194] | RQ  | GET_LAST   : q=0XFE614350
+     684357| [195] | SM  | DCH        : ao=server, sig=DONE, st=server_busy
+     684361| [196] | RQ  | GET        : q=0XFE6149A0, nelem=1
+     684364| [197] | RQ  | LIFO       : q=0XFE614350, nelem=1, nmin=3
+     684367| [198] | SMA | LIFO       : ao=server, sig=REQ, snr=server, pid=1, rc=2, nelem=1, nmin=3, nseq=47
+     684396| [199] | SM  | STATE      : ao=server, nxtst=server_idle
+     684400| [200] | RQ  | GET_LAST   : q=0XFE614350
+     684406| [201] | SM  | DCH        : ao=server, sig=REQ, st=server_idle
+     684409| [202] | MP  | GET        : mp=0XFE614760, nfree=1, nmin=0
+     684412| [203] | RQ  | FIFO       : q=0XFE6140B0, nelem=1, nmin=3
+     684414| [204] | SMA | FIFO       : ao=cli0, sig=START, snr=server, pid=1, rc=1, nelem=1, nmin=3, nseq=7
+     684427| [205] | SM  | STATE      : ao=server, nxtst=server_busy
+     684430| [206] | MP  | PUT        : mp=0XFE614760, nfree=2
+     684433| [207] | RQ  | GET_LAST   : q=0XFE6140B0
+     684440| [208] | SM  | DCH        : ao=cli0, sig=START, st=client_waiting
+     684443| [209] | TIM | START      : t=0XFE6140F0, ao=cli0, nt=200, per=0
+     684454| [210] | SM  | STATE      : ao=cli0, nxtst=client_using
+     684457| [211] | MP  | PUT        : mp=0XFE614760, nfree=3
+     684460| [212] | RQ  | GET_LAST   : q=0XFE614290
+     684468| [213] | SM  | DCH        : ao=cli3, sig=TOUT_REQ, st=client_idle
+     684470| [214] | MP  | GET        : mp=0XFE614760, nfree=2, nmin=0
+     684472| [215] | RQ  | FIFO       : q=0XFE614350, nelem=1, nmin=3
+     684474| [216] | SMA | FIFO       : ao=server, sig=REQ, snr=cli3, pid=1, rc=1, nelem=1, nmin=3, nseq=48
+     684485| [217] | SM  | STATE      : ao=cli3, nxtst=client_waiting
+     684489| [218] | RQ  | GET_LAST   : q=0XFE614350
+     684492| [219] | SM  | DCH        : ao=server, sig=REQ, st=server_busy
+     684499| [220] | RQ  | FIFO       : q=0XFE6149A0, nelem=2, nmin=5
+     692488| [221] | TIM | TOUT       : t=0XFE6140F0, sig=TOUT_USING, ao=cli0
+     692492| [222] | TIM | REM        : t=0XFE6140F0
+     692516| [223] | RQ  | FIFO       : q=0XFE6140B0, nelem=1, nmin=3
+     692518| [224] | SMA | FIFO       : ao=cli0, sig=TOUT_USING, snr=0XFE6140F0, pid=static, rc=0, nelem=1, nmin=3, nseq=8
+     692548| [225] | RQ  | GET_LAST   : q=0XFE6140B0
+     692551| [226] | SM  | DCH        : ao=cli0, sig=TOUT_USING, st=client_using
+     692554| [227] | RQ  | FIFO       : q=0XFE614350, nelem=1, nmin=3
+     692555| [228] | SMA | FIFO       : ao=server, sig=DONE, snr=cli0, pid=static, rc=0, nelem=1, nmin=3, nseq=49
+     692608| [229] | TIM | START      : t=0XFE614110, ao=cli0, nt=600, per=0
+     692620| [230] | SM  | STATE      : ao=cli0, nxtst=client_idle
+     692624| [231] | RQ  | GET_LAST   : q=0XFE614350
+     692626| [232] | SM  | DCH        : ao=server, sig=DONE, st=server_busy
+     692629| [233] | RQ  | GET        : q=0XFE6149A0, nelem=1
+     692632| [234] | RQ  | LIFO       : q=0XFE614350, nelem=1, nmin=3
+     692635| [235] | SMA | LIFO       : ao=server, sig=REQ, snr=server, pid=1, rc=2, nelem=1, nmin=3, nseq=50
+     692673| [236] | SM  | STATE      : ao=server, nxtst=server_idle
+     692695| [237] | RQ  | GET_LAST   : q=0XFE614350
+     692699| [238] | SM  | DCH        : ao=server, sig=REQ, st=server_idle
+     692703| [239] | MP  | GET        : mp=0XFE614760, nfree=1, nmin=0
+     692706| [240] | RQ  | FIFO       : q=0XFE6141F0, nelem=1, nmin=3
+     692709| [241] | SMA | FIFO       : ao=cli2, sig=START, snr=server, pid=1, rc=1, nelem=1, nmin=3, nseq=12
+     692744| [242] | SM  | STATE      : ao=server, nxtst=server_busy
+     692750| [243] | MP  | PUT        : mp=0XFE614760, nfree=2
+     692753| [244] | RQ  | GET_LAST   : q=0XFE6141F0
+     692756| [245] | SM  | DCH        : ao=cli2, sig=START, st=client_waiting
+     692760| [246] | TIM | START      : t=0XFE614230, ao=cli2, nt=300, per=0
+     692777| [247] | SM  | STATE      : ao=cli2, nxtst=client_using
+     692782| [248] | MP  | PUT        : mp=0XFE614760, nfree=3
+
+***** Stream Checksum Error
+
+***** May be have lost trace info, sequence are not correlatives
+     704281| [  2] | SM  | DCH        : ao=cli1, sig=TOUT_REQ, st=client_idle
+     704285| [  3] | MP  | GET        : mp=0XFE614760, nfree=2, nmin=0
+     704287| [  4] | RQ  | FIFO       : q=0XFE614350, nelem=1, nmin=3
+     704289| [  5] | SMA | FIFO       : ao=server, sig=REQ, snr=cli1, pid=1, rc=1, nelem=1, nmin=3, nseq=51
+     704339| [  6] | SM  | STATE      : ao=cli1, nxtst=client_waiting
+     704342| [  7] | RQ  | GET_LAST   : q=0XFE614350
+     704344| [  8] | SM  | DCH        : ao=server, sig=REQ, st=server_busy
+     704347| [  9] | RQ  | FIFO       : q=0XFE6149A0, nelem=2, nmin=5
+     704350| [ 10] | RQ  | GET_LAST   : q=0XFE6141F0
+     704352| [ 11] | SM  | DCH        : ao=cli2, sig=TOUT_USING, st=client_using
+     704355| [ 12] | RQ  | FIFO       : q=0XFE614350, nelem=1, nmin=3
+     704357| [ 13] | SMA | FIFO       : ao=server, sig=DONE, snr=cli2, pid=static, rc=0, nelem=1, nmin=3, nseq=52
+     704393| [ 14] | TIM | START      : t=0XFE614250, ao=cli2, nt=300, per=0
+     704404| [ 15] | SM  | STATE      : ao=cli2, nxtst=client_idle
+     704407| [ 16] | RQ  | GET_LAST   : q=0XFE614350
+     704409| [ 17] | SM  | DCH        : ao=server, sig=DONE, st=server_busy
+     704412| [ 18] | RQ  | GET        : q=0XFE6149A0, nelem=1
+     704415| [ 19] | RQ  | LIFO       : q=0XFE614350, nelem=1, nmin=3
+     704417| [ 20] | SMA | LIFO       : ao=server, sig=REQ, snr=server, pid=1, rc=2, nelem=1, nmin=3, nseq=53
+     704438| [ 21] | SM  | STATE      : ao=server, nxtst=server_idle
+     704441| [ 22] | RQ  | GET_LAST   : q=0XFE614350
+     704443| [ 23] | SM  | DCH        : ao=server, sig=REQ, st=server_idle
+     704446| [ 24] | MP  | GET        : mp=0XFE614760, nfree=1, nmin=0
+     704449| [ 25] | RQ  | FIFO       : q=0XFE614290, nelem=1, nmin=3
+     704451| [ 26] | SMA | FIFO       : ao=cli3, sig=START, snr=server, pid=1, rc=1, nelem=1, nmin=3, nseq=11
+     704464| [ 27] | SM  | STATE      : ao=server, nxtst=server_busy
+     704467| [ 28] | MP  | PUT        : mp=0XFE614760, nfree=2
+     704469| [ 29] | RQ  | GET_LAST   : q=0XFE614290
+     704472| [ 30] | SM  | DCH        : ao=cli3, sig=START, st=client_waiting
+     704475| [ 31] | TIM | START      : t=0XFE6142D0, ao=cli3, nt=300, per=0
+     704486| [ 32] | SM  | STATE      : ao=cli3, nxtst=client_using
+     704489| [ 33] | MP  | PUT        : mp=0XFE614760, nfree=3
+
+***** Stream Checksum Error
+
+***** May be have lost trace info, sequence are not correlatives
+     715944| [ 56] | SM  | DCH        : ao=cli2, sig=TOUT_REQ, st=client_idle
+     715947| [ 57] | MP  | GET        : mp=0XFE614760, nfree=1, nmin=0
+     715949| [ 58] | RQ  | FIFO       : q=0XFE614350, nelem=1, nmin=3
+     715951| [ 59] | SMA | FIFO       : ao=server, sig=REQ, snr=cli2, pid=1, rc=1, nelem=1, nmin=3, nseq=54
+     715965| [ 60] | SM  | STATE      : ao=cli2, nxtst=client_waiting
+     715967| [ 61] | RQ  | GET_LAST   : q=0XFE614350
+     715970| [ 62] | SM  | DCH        : ao=server, sig=REQ, st=server_busy
+     715976| [ 63] | RQ  | FIFO       : q=0XFE6149A0, nelem=3, nmin=5
+     715978| [ 64] | RQ  | GET_LAST   : q=0XFE614290
+     715980| [ 65] | SM  | DCH        : ao=cli3, sig=TOUT_USING, st=client_using
+     715982| [ 66] | RQ  | FIFO       : q=0XFE614350, nelem=1, nmin=3
+     715983| [ 67] | SMA | FIFO       : ao=server, sig=DONE, snr=cli3, pid=static, rc=0, nelem=1, nmin=3, nseq=55
+     715993| [ 68] | TIM | START      : t=0XFE6142F0, ao=cli3, nt=500, per=0
+     716008| [ 69] | SM  | STATE      : ao=cli3, nxtst=client_idle
+     716011| [ 70] | RQ  | GET_LAST   : q=0XFE614350
+     716013| [ 71] | SM  | DCH        : ao=server, sig=DONE, st=server_busy
+     716019| [ 72] | RQ  | GET        : q=0XFE6149A0, nelem=2
+     716021| [ 73] | RQ  | LIFO       : q=0XFE614350, nelem=1, nmin=3
+     716023| [ 74] | SMA | LIFO       : ao=server, sig=REQ, snr=server, pid=1, rc=2, nelem=1, nmin=3, nseq=56
+     716041| [ 75] | SM  | STATE      : ao=server, nxtst=server_idle
+     716044| [ 76] | RQ  | GET_LAST   : q=0XFE614350
+     716046| [ 77] | SM  | DCH        : ao=server, sig=REQ, st=server_idle
+     716052| [ 78] | MP  | GET        : mp=0XFE614760, nfree=0, nmin=0
+     716054| [ 79] | RQ  | FIFO       : q=0XFE614150, nelem=1, nmin=3
+     716056| [ 80] | SMA | FIFO       : ao=cli1, sig=START, snr=server, pid=1, rc=1, nelem=1, nmin=3, nseq=8
+     716066| [ 81] | SM  | STATE      : ao=server, nxtst=server_busy
+     716069| [ 82] | MP  | PUT        : mp=0XFE614760, nfree=1
+     716071| [ 83] | RQ  | GET_LAST   : q=0XFE614150
+     716074| [ 84] | SM  | DCH        : ao=cli1, sig=START, st=client_waiting
+     716076| [ 85] | TIM | START      : t=0XFE614190, ao=cli1, nt=200, per=0
+     716085| [ 86] | SM  | STATE      : ao=cli1, nxtst=client_using
+     716088| [ 87] | MP  | PUT        : mp=0XFE614760, nfree=2
