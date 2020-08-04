@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <CustomTxtTraceDefinitionList>
+        
+
     <Definition category="Trazer" name="Parser">
         <TimeStampOutputFormat>T</TimeStampOutputFormat>
         <InputLine>
@@ -193,6 +195,20 @@
             <InputData action="0" format="" name="QueObj" tag="OTHER"/>
             <InputData action="0" format="" name="nElem" tag="OTHER"/>
         </InputLine>
+        <InputLine>
+            <Cardinality max="2147483647" min="0"/>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(USR)\s*\|\s*+(\S+)\s*:\sUser trace information\s*</RegEx>
+            <EventType>User</EventType>
+            <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
+            <InputData action="0" format="" name="Seq" tag="OTHER"/>
+            <InputData action="0" format="" name="Group" tag="OTHER"/>
+            <InputData action="0" format="" name="Event" tag="OTHER"/>
+            <InputLine>
+                <Cardinality max="2147483647" min="0"/>
+                <RegEx>\s*\|\s+(\S+)\s*</RegEx>
+                <InputData action="2" format="" name="Message" tag="MESSAGE"/>
+            </InputLine>
+        </InputLine>
         <OutputColumn name="Timestamp" tag="TIMESTAMP"/>
         <OutputColumn name="Seq" tag="OTHER"/>
         <OutputColumn name="Group" tag="OTHER"/>
@@ -213,5 +229,6 @@
         <OutputColumn name="Block Size" tag="OTHER"/>
         <OutputColumn name="nFree" tag="OTHER"/>
         <OutputColumn name="QueObj" tag="OTHER"/>
+        <OutputColumn name="Message" tag="MESSAGE"/>
     </Definition>
 </CustomTxtTraceDefinitionList>
