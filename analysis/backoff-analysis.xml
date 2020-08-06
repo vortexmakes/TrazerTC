@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tmfxml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="xmldefinition.xsd">
+
+	<!-- The state provider assigns states from events -->
+	<stateProvider id="trazer.backoff" version="0">
+		<head>
+			<!-- <traceType id="org.eclipse.linuxtools.lttng2.ust.tracetype" /> -->
+			<label value="DeviceMgr Backoff Timer Analysis" />
+		</head>
+
+		<!-- Event handlers -->
+		<eventHandler eventName="User">
+			<stateChange>
+				<stateAttribute type="constant" value="DeviceMgr" />
+				<stateAttribute type="constant" value="BackoffTime" />
+				<stateValue type="eventField" value="Message" forcedType="int" />
+			</stateChange>
+		</eventHandler>
+	</stateProvider>
+
+	<!-- This is the definition of the XY view -->
+	<xyView id="devicemgr.backoff.timer.view">
+		<head>
+			<analysis id="trazer.backoff" />
+			<label value="DeviceMgr Backoff Timer View" />
+		</head>
+	
+		<!-- Which attributes to "print" in the view -->
+		<entry path="DeviceMgr/BackoffTime">
+            <display type="self" />
+		</entry>
+	</xyView>
+
+</tmfxml>
