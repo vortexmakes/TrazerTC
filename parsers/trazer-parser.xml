@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <CustomTxtTraceDefinitionList>
-        
+            
+
+    
 
     <Definition category="Trazer" name="Parser">
         <TimeStampOutputFormat>T</TimeStampOutputFormat>
@@ -197,6 +199,55 @@
         </InputLine>
         <InputLine>
             <Cardinality max="2147483647" min="0"/>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(FWK)\s*\|\s*+(AE)\s*:\s+es=(\d+),\ssig=(\S+),\spid=(\S+),\src=\d+,\snb=\d+,\snmin=(\d+),\sactor=+(\S+)\s*</RegEx>
+            <EventType>FwkAe</EventType>
+            <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
+            <InputData action="0" format="" name="Seq" tag="OTHER"/>
+            <InputData action="0" format="" name="Group" tag="OTHER"/>
+            <InputData action="0" format="" name="Event" tag="OTHER"/>
+            <InputData action="0" format="" name="EvtSize" tag="OTHER"/>
+            <InputData action="0" format="" name="Signal" tag="OTHER"/>
+            <InputData action="0" format="" name="PoolId" tag="OTHER"/>
+            <InputData action="0" format="" name="nMin" tag="OTHER"/>
+            <InputData action="0" format="" name="Ao" tag="OTHER"/>
+        </InputLine>
+        <InputLine>
+            <Cardinality max="2147483647" min="0"/>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(FWK)\s*\|\s*+(GCR)\s*:\s+sig=(\S+),\spid=(\S+),\src=\d+,\snb=\d+,\snmin=(\d+),\sactor=+(\S+)\s*</RegEx>
+            <EventType>FwkGcr</EventType>
+            <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
+            <InputData action="0" format="" name="Seq" tag="OTHER"/>
+            <InputData action="0" format="" name="Group" tag="OTHER"/>
+            <InputData action="0" format="" name="Event" tag="OTHER"/>
+            <InputData action="0" format="" name="Signal" tag="OTHER"/>
+            <InputData action="0" format="" name="PoolId" tag="OTHER"/>
+            <InputData action="0" format="" name="nMin" tag="OTHER"/>
+            <InputData action="0" format="" name="Ao" tag="OTHER"/>
+        </InputLine>
+        <InputLine>
+            <Cardinality max="2147483647" min="0"/>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(FWK)\s*\|\s*+(GC)\s*:\s+sig=(\S+),\spid=+(\S+),\src=\d+\s*</RegEx>
+            <EventType>FwkGc</EventType>
+            <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
+            <InputData action="0" format="" name="Seq" tag="OTHER"/>
+            <InputData action="0" format="" name="Group" tag="OTHER"/>
+            <InputData action="0" format="" name="Event" tag="OTHER"/>
+            <InputData action="0" format="" name="Signal" tag="OTHER"/>
+            <InputData action="0" format="" name="PoolId" tag="OTHER"/>
+        </InputLine>
+        <InputLine>
+            <Cardinality max="2147483647" min="0"/>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(FWK)\s*\|\s*+(EPOOL)\s*:\s+ep=(\S+),\snm=(\S+)\s*</RegEx>
+            <EventType>FwkEvtPool</EventType>
+            <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
+            <InputData action="0" format="" name="Seq" tag="OTHER"/>
+            <InputData action="0" format="" name="Group" tag="OTHER"/>
+            <InputData action="0" format="" name="Event" tag="OTHER"/>
+            <InputData action="0" format="" name="EvtPool" tag="OTHER"/>
+            <InputData action="0" format="" name="PoolId" tag="OTHER"/>
+        </InputLine>
+        <InputLine>
+            <Cardinality max="2147483647" min="0"/>
             <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(USR)\s*\|\s*+(\S+)\s*:\sUser trace information\s*</RegEx>
             <EventType>User</EventType>
             <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
@@ -230,5 +281,8 @@
         <OutputColumn name="nFree" tag="OTHER"/>
         <OutputColumn name="QueObj" tag="OTHER"/>
         <OutputColumn name="Message" tag="MESSAGE"/>
+        <OutputColumn name="PoolId" tag="OTHER"/>
+        <OutputColumn name="EvtPool" tag="OTHER"/>
+        <OutputColumn name="EvtSize" tag="OTHER"/>
     </Definition>
 </CustomTxtTraceDefinitionList>
