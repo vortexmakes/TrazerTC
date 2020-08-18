@@ -22,8 +22,10 @@ In this case, they are produced by [Trazer](https://github.com/vortexmakes/Traze
 - Docs (xsd files) about data driven analysis through XML https://github.com/tracecompass/tracecompass/tree/master/tmf/org.eclipse.tracecompass.tmf.analysis.xml.core/src/org/eclipse/tracecompass/tmf/analysis/xml/core/module
 
 ## Before to start
+To go through this tutorial, you will need:
 - A recent version of Trace Compass together with an Eclipse IDE. You will need a Java JRE, at least version 7.
 - A local clone of this repository
+- A recent version of [Trazer](https://github.com/vortexmakes/Trazer/releases)
 
 ## Using Trace Compass with Trazer
 1. Run your reactive embedded application, which uses [RKH](https://github.com/vortexmakes/RKH) framework, together with [Trazer](https://vortexmakes.com/rkh/trazer.html). It is a console application to capture and format application traces from an instrumented application based on [RKH](https://github.com/vortexmakes/RKH)
