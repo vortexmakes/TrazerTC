@@ -10,8 +10,10 @@ Trace Compass Examples for Trazer
 - [Updating Trazer parser](#updating-trazer-parser)
 ------------------------------------------------------------------------------
 ## Overview
-[Trace Compass](https://www.eclipse.org/tracecompass/) is a Java tool for viewing and analyzing any type of logs or traces. Its goal is to provide views, graphs, metrics, etc. to help extract useful information from traces, in a way that is more user-friendly and informative than huge text dumps. 
-In this case, they are produced by [Trazer](https://github.com/vortexmakes/Trazer) application, which is a visualization tool that works in conjuntion with the [RKH](https://github.com/vortexmakes/RKH) framework built in trace facility.
+[Trace Compass](https://www.eclipse.org/tracecompass/) is an open source application for viewing and analyzing any type of logs or traces. Its goal is to provide views, graphs, metrics, etc. to help extract useful information from traces, in a way that is more user-friendly and informative than huge text dumps. 
+
+This repository provides a simple guide to use the powerful Trace Compass to solve performance and reliability issues by reading and analyzing 
+traces of a reactive and embedded application based on the [RKH](https://github.com/vortexmakes/RKH) framework.
 
 ![Trace Compass parsing Trazer ouput](images/tc.png)
 
@@ -28,9 +30,9 @@ To go through this tutorial, you will need:
 - A recent version of [Trazer](https://github.com/vortexmakes/Trazer/releases)
 
 ## Using Trace Compass with Trazer
-1. Run your reactive embedded application, which uses [RKH](https://github.com/vortexmakes/RKH) framework, together with [Trazer](https://vortexmakes.com/rkh/trazer.html). It is a console application to capture and format application traces from an instrumented application based on [RKH](https://github.com/vortexmakes/RKH)
+1. Capture a trace session of your reactive embedded application
     1. Run [Trazer](https://vortexmakes.com/rkh/trazer.html) from a terminal typing a sentence like that: `./trazer -c /dev/ttyS0 115200 8N1 -o outtraces` to capture traces from a serial port and to save them to a file
-    2. Run your embedded and instrumented application
+    2. Run your embedded instrumented application which uses the [RKH](https://github.com/vortexmakes/RKH) framework
 1. Run an Eclipse IDE instance
 2. Open __Tracing__ perspective from __Window__ > __Perspective__ > __Open Perspective__ and select __Tracing__
 3. Import TrazerTC project and open the __Project Explorer__ view
