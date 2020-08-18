@@ -10,10 +10,9 @@ Trace Compass Examples for Trazer
 - [Updating Trazer parser](#updating-trazer-parser)
 ------------------------------------------------------------------------------
 ## Overview
-[Trace Compass](https://www.eclipse.org/tracecompass/) is an open source application for viewing and analyzing any type of logs or traces. Its goal is to provide views, graphs, metrics, etc. to help extract useful information from traces, in a way that is more user-friendly and informative than huge text dumps. 
+This repository provides a simple guide to use the powerful [Trace Compass](https://www.eclipse.org/tracecompass/) to solve performance and reliability issues by reading and analyzing traces of a reactive and embedded application based on the [RKH](https://github.com/vortexmakes/RKH) framework.
 
-This repository provides a simple guide to use the powerful Trace Compass to solve performance and reliability issues by reading and analyzing 
-traces of a reactive and embedded application based on the [RKH](https://github.com/vortexmakes/RKH) framework.
+[Trace Compass](https://www.eclipse.org/tracecompass/) is an open source application for viewing and analyzing any type of logs or traces. Its goal is to provide views, graphs, metrics, etc. to help extract useful information from traces, in a way that is more user-friendly and informative than huge text dumps. 
 
 ![Trace Compass parsing Trazer ouput](images/tc.png)
 
@@ -27,7 +26,8 @@ traces of a reactive and embedded application based on the [RKH](https://github.
 To go through this tutorial, you will need:
 - A recent version of Trace Compass together with an Eclipse IDE. You will need a Java JRE, at least version 7.
 - A local clone of this repository
-- A recent version of [Trazer](https://github.com/vortexmakes/Trazer/releases)
+- A recent version of [Trazer](https://github.com/vortexmakes/Trazer/releases) which is a console application to capture and format 
+traces from an instrumented application based on [RKH](https://github.com/vortexmakes/RKH)
 
 ## Using Trace Compass with Trazer
 1. Capture a trace session of your reactive embedded application
