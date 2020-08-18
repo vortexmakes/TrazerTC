@@ -27,7 +27,7 @@ In this case, they are produced by [Trazer](https://github.com/vortexmakes/Traze
 
 ## Using Trace Compass with Trazer
 1. Run your reactive embedded application, which uses [RKH](https://github.com/vortexmakes/RKH) framework, together with [Trazer](https://vortexmakes.com/rkh/trazer.html). It is a console application to capture and format application traces from an instrumented application based on [RKH](https://github.com/vortexmakes/RKH)
-    1. Run [Trazer](https://vortexmakes.com/rkh/trazer.html) from a terminal typying: `./trazer -c /dev/ttyS0 115200 8N1 -o outtraces` to capture traces from a serial port and to save them to a file
+    1. Run [Trazer](https://vortexmakes.com/rkh/trazer.html) from a terminal typing a sentence like that: `./trazer -c /dev/ttyS0 115200 8N1 -o outtraces` to capture traces from a serial port and to save them to a file
     2. Run your embedded and instrumented application
 1. Run an Eclipse IDE instance
 2. Open __Tracing__ perspective from __Window__ > __Perspective__ > __Open Perspective__ and select __Tracing__
