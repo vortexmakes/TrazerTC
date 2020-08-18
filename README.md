@@ -17,10 +17,11 @@ This repository provides a simple guide to use the powerful [Trace Compass](http
 ![Trace Compass parsing Trazer ouput](images/tc.png)
 
 ## Trace Compass Documentation
-- Trace Compass User Guide https://archive.eclipse.org/tracecompass/doc/stable/org.eclipse.tracecompass.doc.user/User-Guide.html
-- XML analysis example https://github.com/lihui7115/xml-analysis-example
-- Trace Compass presentation https://www.eclipsecon.org/na2015/sites/default/files/slides/EclipseConAmerica2015.pdf
-- Docs (xsd files) about data driven analysis through XML https://github.com/tracecompass/tracecompass/tree/master/tmf/org.eclipse.tracecompass.tmf.analysis.xml.core/src/org/eclipse/tracecompass/tmf/analysis/xml/core/module
+- [Trace Compass User Guide](https://archive.eclipse.org/tracecompass/doc/stable/org.eclipse.tracecompass.doc.user/User-Guide.html)
+- [An example of XML analysis](https://github.com/lihui7115/xml-analysis-example)
+- [Analyzing Eclipse Applications with Trace Compass](https://www.eclipsecon.org/na2015/sites/default/files/slides/EclipseConAmerica2015.pdf) presentation 
+of [EclipseCon](https://www.eclipsecon.org).
+- Docs ([xsd](https://github.com/tracecompass/tracecompass/tree/master/tmf/org.eclipse.tracecompass.tmf.analysis.xml.core/src/org/eclipse/tracecompass/tmf/analysis/xml/core/module) files) about data driven analysis through XML 
 
 ## Before to start
 To go through this tutorial, you will need:
