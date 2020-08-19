@@ -1,5 +1,5 @@
 # TrazerTC
-Trace Compass Examples for Trazer
+Trace Compass Examples for RKH's Trazer
 
 ## Contents
 - [Overview](#overview)
