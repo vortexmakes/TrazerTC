@@ -47,6 +47,14 @@ To go through this tutorial, you will need:
 - A recent version of [Trazer](https://github.com/vortexmakes/Trazer/releases) which is a console application to capture and format 
 traces from an instrumented application based on [RKH](https://github.com/vortexmakes/RKH)
 
+### Installing Trazer
+RKH allows developers to verify and validate a reactive application's behaviour at runtime by means of its built-in tracer. In addition, RKH provides a very simple but powerful console application, called Trazer, to visualize the trace events' output in a legible manner. It can be downloaded and installed as follows.
+
+1.  Download Trazer for Linux 64-bits from its [official repository](https://github.com/vortexmakes/Trazer/releases/download/3.2/RC_trazer_3_2_lnx64b.tar.gz)
+2.  Copy downloaded file to a folder and extract it
+3.  Change the directory to previous folder
+4.  Check it is alright by executing ./trazer
+
 ## Using Trace Compass with Trazer
 1. Capture a trace session of your reactive embedded application
     1. Run [Trazer](https://vortexmakes.com/rkh/trazer.html) from a terminal typing a sentence like that: `./trazer -c /dev/ttyS0 115200 8N1 -o outtraces` to capture traces from a serial port and to save them to a file
