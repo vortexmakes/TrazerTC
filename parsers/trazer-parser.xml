@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <CustomTxtTraceDefinitionList>
-            
+                
+
+    
 
     
 
@@ -70,6 +72,28 @@
             <InputData action="0" format="" name="nElem" tag="OTHER"/>
             <InputData action="0" format="" name="nMin" tag="OTHER"/>
             <InputData action="0" format="" name="Latency" tag="OTHER"/>
+        </InputLine>
+        <InputLine>
+            <Cardinality max="2147483647" min="0"/>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SMA)\s*\|\s*+(DEFER)\s*:\s+q=+(\S+),\ssig=+(\S+)\s*</RegEx>
+            <EventType>SmaDefer</EventType>
+            <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
+            <InputData action="0" format="" name="Seq" tag="OTHER"/>
+            <InputData action="0" format="" name="Group" tag="OTHER"/>
+            <InputData action="0" format="" name="Event" tag="OTHER"/>
+            <InputData action="0" format="" name="QueObj" tag="OTHER"/>
+            <InputData action="0" format="" name="Signal" tag="OTHER"/>
+        </InputLine>
+        <InputLine>
+            <Cardinality max="2147483647" min="0"/>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SMA)\s*\|\s*+(RCALL)\s*:\s+ao=+(\S+),\ssig=+(\S+)\s*</RegEx>
+            <EventType>SmaRecall</EventType>
+            <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
+            <InputData action="0" format="" name="Seq" tag="OTHER"/>
+            <InputData action="0" format="" name="Group" tag="OTHER"/>
+            <InputData action="0" format="" name="Event" tag="OTHER"/>
+            <InputData action="0" format="" name="Ao" tag="OTHER"/>
+            <InputData action="0" format="" name="Signal" tag="OTHER"/>
         </InputLine>
         <InputLine>
             <Cardinality max="2147483647" min="0"/>

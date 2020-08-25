@@ -9,4 +9,11 @@
 	<natures>
 		<nature>org.eclipse.linuxtools.tmf.project.nature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>Traces/trace.txt</name>
+			<type>1</type>
+			<location>/home/dario/trazer/trace.txt</location>
+		</link>
+	</linkedResources>
 </projectDescription>
