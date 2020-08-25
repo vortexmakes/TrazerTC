@@ -33,6 +33,29 @@
         </InputLine>
         <InputLine>
             <Cardinality max="2147483647" min="0"/>
+	    <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SMA)\s*\|\s*+(ACT)\s*:\s+ao=+(\S+),\sprio=+(\d+),\ssize=+(\d+)\s*</RegEx>
+            <EventType>SmaAct</EventType>
+            <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
+            <InputData action="0" format="" name="Seq" tag="OTHER"/>
+            <InputData action="0" format="" name="Group" tag="OTHER"/>
+            <InputData action="0" format="" name="Event" tag="OTHER"/>
+            <InputData action="0" format="" name="Ao" tag="OTHER"/>
+            <InputData action="0" format="" name="Prio" tag="OTHER"/>
+            <InputData action="0" format="" name="Size" tag="OTHER"/>
+        </InputLine>
+        <InputLine>
+            <Cardinality max="2147483647" min="0"/>
+	    <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SMA)\s*\|\s*+(TERM)\s*:\s+ao=+(\S+),\sprio=+(\d+)\s*</RegEx>
+            <EventType>SmaTerm</EventType>
+            <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
+            <InputData action="0" format="" name="Seq" tag="OTHER"/>
+            <InputData action="0" format="" name="Group" tag="OTHER"/>
+            <InputData action="0" format="" name="Event" tag="OTHER"/>
+            <InputData action="0" format="" name="Ao" tag="OTHER"/>
+            <InputData action="0" format="" name="Prio" tag="OTHER"/>
+        </InputLine>
+        <InputLine>
+            <Cardinality max="2147483647" min="0"/>
             <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SMA)\s*\|\s*+(FIFO)\s*:\s+ao=+(\S+),\ssig=+(\S+),\ssnr=+(\S+),\s\S+,\s\S+,\snelem=+(\d+),\snmin=+(\d+),.*</RegEx>
             <EventType>SmaFifo</EventType>
             <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
@@ -72,6 +95,28 @@
             <InputData action="0" format="" name="nElem" tag="OTHER"/>
             <InputData action="0" format="" name="nMin" tag="OTHER"/>
             <InputData action="0" format="" name="Latency" tag="OTHER"/>
+        </InputLine>
+        <InputLine>
+            <Cardinality max="2147483647" min="0"/>
+	    <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SMA)\s*\|\s*+(REG)\s*:\s+ao=+(\S+),\sprio=+(\d+)\s*</RegEx>
+            <EventType>SmaReg</EventType>
+            <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
+            <InputData action="0" format="" name="Seq" tag="OTHER"/>
+            <InputData action="0" format="" name="Group" tag="OTHER"/>
+            <InputData action="0" format="" name="Event" tag="OTHER"/>
+            <InputData action="0" format="" name="Ao" tag="OTHER"/>
+            <InputData action="0" format="" name="Prio" tag="OTHER"/>
+        </InputLine>
+        <InputLine>
+            <Cardinality max="2147483647" min="0"/>
+	    <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SMA)\s*\|\s*+(UNREG)\s*:\s+ao=+(\S+),\sprio=+(\d+)\s*</RegEx>
+            <EventType>SmaUnreg</EventType>
+            <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
+            <InputData action="0" format="" name="Seq" tag="OTHER"/>
+            <InputData action="0" format="" name="Group" tag="OTHER"/>
+            <InputData action="0" format="" name="Event" tag="OTHER"/>
+            <InputData action="0" format="" name="Ao" tag="OTHER"/>
+            <InputData action="0" format="" name="Prio" tag="OTHER"/>
         </InputLine>
         <InputLine>
             <Cardinality max="2147483647" min="0"/>
@@ -308,5 +353,7 @@
         <OutputColumn name="PoolId" tag="OTHER"/>
         <OutputColumn name="EvtPool" tag="OTHER"/>
         <OutputColumn name="EvtSize" tag="OTHER"/>
+        <OutputColumn name="Prio" tag="OTHER"/>
+        <OutputColumn name="Size" tag="OTHER"/>
     </Definition>
 </CustomTxtTraceDefinitionList>
