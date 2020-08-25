@@ -248,6 +248,40 @@
 	<!-- SM Trace Group -->
         <InputLine>
             <Cardinality max="2147483647" min="0"/>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SM)\s*\|\s*+(INIT)\s*:\s+ao=+(\S+),\sist=+(\S+)\s*</RegEx>
+            <EventType>SmInit</EventType>
+            <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
+            <InputData action="0" format="" name="Seq" tag="OTHER"/>
+            <InputData action="0" format="" name="Group" tag="OTHER"/>
+            <InputData action="0" format="" name="Event" tag="OTHER"/>
+            <InputData action="0" format="" name="Ao" tag="OTHER"/>
+            <InputData action="0" format="" name="Initial State" tag="OTHER"/>
+        </InputLine>
+        <InputLine>
+            <Cardinality max="2147483647" min="0"/>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SM)\s*\|\s*+(CLRH)\s*:\s+ao=+(\S+),\sh=+(\S+)\s*</RegEx>
+            <EventType>SmClrHist</EventType>
+            <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
+            <InputData action="0" format="" name="Seq" tag="OTHER"/>
+            <InputData action="0" format="" name="Group" tag="OTHER"/>
+            <InputData action="0" format="" name="Event" tag="OTHER"/>
+            <InputData action="0" format="" name="Ao" tag="OTHER"/>
+            <InputData action="0" format="" name="History State" tag="OTHER"/>
+        </InputLine>
+        <InputLine>
+            <Cardinality max="2147483647" min="0"/>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SM)\s*\|\s*+(TRN)\s*:\s+ao=+(\S+),\ssst=+(\S+),\stst=+(\S+)\s*</RegEx>
+            <EventType>SmTrn</EventType>
+            <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
+            <InputData action="0" format="" name="Seq" tag="OTHER"/>
+            <InputData action="0" format="" name="Group" tag="OTHER"/>
+            <InputData action="0" format="" name="Event" tag="OTHER"/>
+            <InputData action="0" format="" name="Ao" tag="OTHER"/>
+            <InputData action="0" format="" name="Source State" tag="OTHER"/>
+            <InputData action="0" format="" name="Target State" tag="OTHER"/>
+        </InputLine>
+        <InputLine>
+            <Cardinality max="2147483647" min="0"/>
             <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SM)\s*\|\s*+(STATE)\s*:\s+ao=+(\S+),\snxtst=+(\S+)\s*</RegEx>
             <EventType>SmState</EventType>
             <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
@@ -285,13 +319,25 @@
         <InputLine>
             <Cardinality max="2147483647" min="0"/>
             <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(TIM)\s*\|\s*+(START)\s*:\s+t=+(\S+),\sao=+(\S+),\snt=+(\d+),\sper=+(\d+)\s*</RegEx>
-            <EventType>TmrStart</EventType>
+            <EventType>TmrStop</EventType>
             <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
             <InputData action="0" format="" name="Seq" tag="OTHER"/>
             <InputData action="0" format="" name="Group" tag="OTHER"/>
             <InputData action="0" format="" name="Event" tag="OTHER"/>
             <InputData action="0" format="" name="TmrObj" tag="OTHER"/>
             <InputData action="0" format="" name="Ao" tag="OTHER"/>
+            <InputData action="0" format="" name="nTick" tag="OTHER"/>
+            <InputData action="0" format="" name="Per" tag="OTHER"/>
+        </InputLine>
+        <InputLine>
+            <Cardinality max="2147483647" min="0"/>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(TIM)\s*\|\s*+(STOP)\s*:\s+t=+(\S+),\snt=+(\d+),\sper=+(\d+)\s*</RegEx>
+            <EventType>TmrStart</EventType>
+            <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
+            <InputData action="0" format="" name="Seq" tag="OTHER"/>
+            <InputData action="0" format="" name="Group" tag="OTHER"/>
+            <InputData action="0" format="" name="Event" tag="OTHER"/>
+            <InputData action="0" format="" name="TmrObj" tag="OTHER"/>
             <InputData action="0" format="" name="nTick" tag="OTHER"/>
             <InputData action="0" format="" name="Per" tag="OTHER"/>
         </InputLine>
@@ -396,6 +442,10 @@
         <OutputColumn name="nElem" tag="OTHER"/>
         <OutputColumn name="nMin" tag="OTHER"/>
         <OutputColumn name="Latency" tag="OTHER"/>
+        <OutputColumn name="Initial State" tag="OTHER"/>
+        <OutputColumn name="History State" tag="OTHER"/>
+        <OutputColumn name="Source State" tag="OTHER"/>
+        <OutputColumn name="Target State" tag="OTHER"/>
         <OutputColumn name="Next State" tag="OTHER"/>
         <OutputColumn name="Current State" tag="OTHER"/>
         <OutputColumn name="TmrObj" tag="OTHER"/>
