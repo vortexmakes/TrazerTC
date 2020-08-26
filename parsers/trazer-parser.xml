@@ -11,7 +11,7 @@
 	<!-- MP Trace Group -->
         <InputLine>
             <Cardinality max="2147483647" min="0"/>
-            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(MP)\s*\|\s*+(INIT)\s*:\s+mp=+(\S+),\snb=+(\d+),\sbs=+(\d+)\s*</RegEx>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(MP)\s*\|\s*(INIT)\s*:\s+mp=(\S+),\snb=(\d+),\sbs=(\d+)\s*</RegEx>
             <EventType>MpInit</EventType>
             <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
             <InputData action="0" format="" name="Seq" tag="OTHER"/>
@@ -23,7 +23,7 @@
         </InputLine>
         <InputLine>
             <Cardinality max="2147483647" min="0"/>
-            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(MP)\s*\|\s*+(GET)\s*:\s+mp=+(\S+),\snfree=+(\d+),\snmin=+(\d+)\s*</RegEx>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(MP)\s*\|\s*(GET)\s*:\s+mp=(\S+),\snfree=(\d+),\snmin=(\d+)\s*</RegEx>
             <EventType>MpGet</EventType>
             <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
             <InputData action="0" format="" name="Seq" tag="OTHER"/>
@@ -35,7 +35,7 @@
         </InputLine>
         <InputLine>
             <Cardinality max="2147483647" min="0"/>
-            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(MP)\s*\|\s*+(PUT)\s*:\s+mp=+(\S+),\snfree=+(\d+)\s*</RegEx>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(MP)\s*\|\s*(PUT)\s*:\s+mp=(\S+),\snfree=(\d+)\s*</RegEx>
             <EventType>MpPut</EventType>
             <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
             <InputData action="0" format="" name="Seq" tag="OTHER"/>
@@ -48,7 +48,7 @@
 	<!-- RQ Trace Group -->
         <InputLine>
             <Cardinality max="2147483647" min="0"/>
-            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(RQ)\s*\|\s*+(INIT)\s*:\s+q=+(\S+),\sao=+(\S+),\snelem=+(\d+)\s*</RegEx>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(RQ)\s*\|\s*(INIT)\s*:\s+q=(\S+),\sao=(\S+),\snelem=(\d+)\s*</RegEx>
             <EventType>QueInit</EventType>
             <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
             <InputData action="0" format="" name="Seq" tag="OTHER"/>
@@ -60,7 +60,7 @@
         </InputLine>
         <InputLine>
             <Cardinality max="2147483647" min="0"/>
-            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(RQ)\s*\|\s*+(GET)\s*:\s+q=+(\S+),\s+nelem=+(\d+)\s*</RegEx>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(RQ)\s*\|\s*(GET)\s*:\s+q=(\S+),\s+nelem=(\d+)\s*</RegEx>
             <EventType>QueGet</EventType>
             <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
             <InputData action="0" format="" name="Seq" tag="OTHER"/>
@@ -71,7 +71,7 @@
         </InputLine>
         <InputLine>
             <Cardinality max="2147483647" min="0"/>
-            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(RQ)\s*\|\s*+(FIFO)\s*:\s+q=+(\S+),\snelem=+(\d+),\snmin=+(\d+)\s*</RegEx>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(RQ)\s*\|\s*(FIFO)\s*:\s+q=(\S+),\snelem=(\d+),\snmin=(\d+)\s*</RegEx>
             <EventType>QueFifo</EventType>
             <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
             <InputData action="0" format="" name="Seq" tag="OTHER"/>
@@ -83,7 +83,7 @@
         </InputLine>
         <InputLine>
             <Cardinality max="2147483647" min="0"/>
-            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(RQ)\s*\|\s*+(LIFO)\s*:\s+q=+(\S+),\snelem=+(\d+),\snmin=+(\d+)\s*</RegEx>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(RQ)\s*\|\s*(LIFO)\s*:\s+q=(\S+),\snelem=(\d+),\snmin=(\d+)\s*</RegEx>
             <EventType>QueLifo</EventType>
             <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
             <InputData action="0" format="" name="Seq" tag="OTHER"/>
@@ -95,7 +95,7 @@
         </InputLine>
         <InputLine>
             <Cardinality max="2147483647" min="0"/>
-            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(RQ)\s*\|\s*+(FULL)\s*:\s+q=+(\S+)\s*</RegEx>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(RQ)\s*\|\s*(FULL)\s*:\s+q=(\S+)\s*</RegEx>
             <EventType>QueLifo</EventType>
             <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
             <InputData action="0" format="" name="Seq" tag="OTHER"/>
@@ -105,7 +105,7 @@
         </InputLine>
         <InputLine>
             <Cardinality max="2147483647" min="0"/>
-            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(RQ)\s*\|\s*+(FULL)\s*:\s+q=+(\S+)\s*</RegEx>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(RQ)\s*\|\s*(FULL)\s*:\s+q=(\S+)\s*</RegEx>
             <EventType>QueFull</EventType>
             <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
             <InputData action="0" format="" name="Seq" tag="OTHER"/>
@@ -115,7 +115,7 @@
         </InputLine>
         <InputLine>
             <Cardinality max="2147483647" min="0"/>
-            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(RQ)\s*\|\s*+(DPT)\s*:\s+q=+(\S+)\s*</RegEx>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(RQ)\s*\|\s*(DPT)\s*:\s+q=(\S+)\s*</RegEx>
             <EventType>QueDeplete</EventType>
             <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
             <InputData action="0" format="" name="Seq" tag="OTHER"/>
@@ -125,7 +125,7 @@
         </InputLine>
         <InputLine>
             <Cardinality max="2147483647" min="0"/>
-            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(RQ)\s*\|\s*+(GET_LAST)\s*:\s+q=+(\S+)\s*</RegEx>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(RQ)\s*\|\s*(GET_LAST)\s*:\s+q=(\S+)\s*</RegEx>
             <EventType>QueGetLast</EventType>
             <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
             <InputData action="0" format="" name="Seq" tag="OTHER"/>
@@ -137,7 +137,7 @@
 	<!-- SMA Trace Group -->
         <InputLine>
             <Cardinality max="2147483647" min="0"/>
-	    <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SMA)\s*\|\s*+(ACT)\s*:\s+ao=+(\S+),\sprio=+(\d+),\ssize=+(\d+)\s*</RegEx>
+	    <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SMA)\s*\|\s*(ACT)\s*:\s+ao=(\S+),\sprio=(\d+),\ssize=(\d+)\s*</RegEx>
             <EventType>SmaAct</EventType>
             <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
             <InputData action="0" format="" name="Seq" tag="OTHER"/>
@@ -145,11 +145,11 @@
             <InputData action="0" format="" name="Event" tag="OTHER"/>
             <InputData action="0" format="" name="Ao" tag="OTHER"/>
             <InputData action="0" format="" name="Prio" tag="OTHER"/>
-            <InputData action="0" format="" name="Size" tag="OTHER"/>
+            <InputData action="2" format="" name="nElem" tag="OTHER"/>
         </InputLine>
         <InputLine>
             <Cardinality max="2147483647" min="0"/>
-	    <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SMA)\s*\|\s*+(TERM)\s*:\s+ao=+(\S+),\sprio=+(\d+)\s*</RegEx>
+	    <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SMA)\s*\|\s*(TERM)\s*:\s+ao=(\S+),\sprio=(\d+)\s*</RegEx>
             <EventType>SmaTerm</EventType>
             <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
             <InputData action="0" format="" name="Seq" tag="OTHER"/>
@@ -160,7 +160,7 @@
         </InputLine>
         <InputLine>
             <Cardinality max="2147483647" min="0"/>
-            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SMA)\s*\|\s*+(FIFO)\s*:\s+ao=+(\S+),\ssig=+(\S+),\ssnr=+(\S+),\s\S+,\s\S+,\snelem=+(\d+),\snmin=+(\d+),.*</RegEx>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SMA)\s*\|\s*(FIFO)\s*:\s+ao=(\S+),\ssig=(\S+),\ssnr=(\S+),\s\S+,\s\S+,\snelem=(\d+),\snmin=(\d+),.*</RegEx>
             <EventType>SmaFifo</EventType>
             <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
             <InputData action="0" format="" name="Seq" tag="OTHER"/>
@@ -174,7 +174,7 @@
         </InputLine>
         <InputLine>
             <Cardinality max="2147483647" min="0"/>
-            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SMA)\s*\|\s*+(LIFO)\s*:\s+ao=+(\S+),\ssig=+(\S+),\ssnr=+(\S+),\s\S+,\s\S+,\snelem=+(\d+),\snmin=+(\d+),.*</RegEx>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SMA)\s*\|\s*(LIFO)\s*:\s+ao=(\S+),\ssig=(\S+),\ssnr=(\S+),\s\S+,\s\S+,\snelem=(\d+),\snmin=(\d+),.*</RegEx>
             <EventType>SmaLifo</EventType>
             <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
             <InputData action="0" format="" name="Seq" tag="OTHER"/>
@@ -188,7 +188,7 @@
         </InputLine>
         <InputLine>
             <Cardinality max="2147483647" min="0"/>
-            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SMA)\s*\|\s*+(GET)\s*:\s+ao=+(\S+),\ssig=+(\S+),\s\S+,\s\S+,\snelem=+(\d+),\snmin=+(\d+),\srt=+(\d+),.*</RegEx>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SMA)\s*\|\s*(GET)\s*:\s+ao=(\S+),\ssig=(\S+),\s\S+,\s\S+,\snelem=(\d+),\snmin=(\d+),\srt=(\d+),.*</RegEx>
             <EventType>SmaGet</EventType>
             <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
             <InputData action="0" format="" name="Seq" tag="OTHER"/>
@@ -202,7 +202,7 @@
         </InputLine>
         <InputLine>
             <Cardinality max="2147483647" min="0"/>
-	    <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SMA)\s*\|\s*+(REG)\s*:\s+ao=+(\S+),\sprio=+(\d+)\s*</RegEx>
+	    <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SMA)\s*\|\s*(REG)\s*:\s+ao=(\S+),\sprio=(\d+)\s*</RegEx>
             <EventType>SmaReg</EventType>
             <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
             <InputData action="0" format="" name="Seq" tag="OTHER"/>
@@ -213,7 +213,7 @@
         </InputLine>
         <InputLine>
             <Cardinality max="2147483647" min="0"/>
-	    <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SMA)\s*\|\s*+(UNREG)\s*:\s+ao=+(\S+),\sprio=+(\d+)\s*</RegEx>
+	    <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SMA)\s*\|\s*(UNREG)\s*:\s+ao=(\S+),\sprio=(\d+)\s*</RegEx>
             <EventType>SmaUnreg</EventType>
             <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
             <InputData action="0" format="" name="Seq" tag="OTHER"/>
@@ -224,7 +224,7 @@
         </InputLine>
         <InputLine>
             <Cardinality max="2147483647" min="0"/>
-            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SMA)\s*\|\s*+(DEFER)\s*:\s+q=+(\S+),\ssig=+(\S+)\s*</RegEx>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SMA)\s*\|\s*(DEFER)\s*:\s+q=(\S+),\ssig=(\S+)\s*</RegEx>
             <EventType>SmaDefer</EventType>
             <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
             <InputData action="0" format="" name="Seq" tag="OTHER"/>
@@ -235,7 +235,7 @@
         </InputLine>
         <InputLine>
             <Cardinality max="2147483647" min="0"/>
-            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SMA)\s*\|\s*+(RCALL)\s*:\s+ao=+(\S+),\ssig=+(\S+)\s*</RegEx>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SMA)\s*\|\s*(RCALL)\s*:\s+ao=(\S+),\ssig=(\S+)\s*</RegEx>
             <EventType>SmaRecall</EventType>
             <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
             <InputData action="0" format="" name="Seq" tag="OTHER"/>
@@ -248,52 +248,190 @@
 	<!-- SM Trace Group -->
         <InputLine>
             <Cardinality max="2147483647" min="0"/>
-            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SM)\s*\|\s*+(INIT)\s*:\s+ao=+(\S+),\sist=+(\S+)\s*</RegEx>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SM)\s*\|\s*(INIT)\s*:\s+ao=(\S+),\sist=(\S+)\s*</RegEx>
             <EventType>SmInit</EventType>
             <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
             <InputData action="0" format="" name="Seq" tag="OTHER"/>
             <InputData action="0" format="" name="Group" tag="OTHER"/>
             <InputData action="0" format="" name="Event" tag="OTHER"/>
             <InputData action="0" format="" name="Ao" tag="OTHER"/>
-            <InputData action="0" format="" name="Initial State" tag="OTHER"/>
+            <InputData action="0" format="" name="State" tag="OTHER"/>
         </InputLine>
         <InputLine>
             <Cardinality max="2147483647" min="0"/>
-            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SM)\s*\|\s*+(CLRH)\s*:\s+ao=+(\S+),\sh=+(\S+)\s*</RegEx>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SM)\s*\|\s*(CLRH)\s*:\s+ao=(\S+),\sh=(\S+)\s*</RegEx>
             <EventType>SmClrHist</EventType>
             <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
             <InputData action="0" format="" name="Seq" tag="OTHER"/>
             <InputData action="0" format="" name="Group" tag="OTHER"/>
             <InputData action="0" format="" name="Event" tag="OTHER"/>
             <InputData action="0" format="" name="Ao" tag="OTHER"/>
-            <InputData action="0" format="" name="History State" tag="OTHER"/>
+            <InputData action="0" format="" name="State" tag="OTHER"/>
         </InputLine>
         <InputLine>
             <Cardinality max="2147483647" min="0"/>
-            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SM)\s*\|\s*+(TRN)\s*:\s+ao=+(\S+),\ssst=+(\S+),\stst=+(\S+)\s*</RegEx>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SM)\s*\|\s*(TRN)\s*:\s+ao=(\S+),\ssst=(\S+),\stst=(\S+)\s*</RegEx>
             <EventType>SmTrn</EventType>
             <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
             <InputData action="0" format="" name="Seq" tag="OTHER"/>
             <InputData action="0" format="" name="Group" tag="OTHER"/>
             <InputData action="0" format="" name="Event" tag="OTHER"/>
             <InputData action="0" format="" name="Ao" tag="OTHER"/>
-            <InputData action="0" format="" name="Source State" tag="OTHER"/>
+            <InputData action="0" format="" name="State" tag="OTHER"/>
             <InputData action="0" format="" name="Target State" tag="OTHER"/>
         </InputLine>
         <InputLine>
             <Cardinality max="2147483647" min="0"/>
-            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SM)\s*\|\s*+(STATE)\s*:\s+ao=+(\S+),\snxtst=+(\S+)\s*</RegEx>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SM)\s*\|\s*(STATE)\s*:\s+ao=(\S+),\snxtst=(\S+)\s*</RegEx>
             <EventType>SmState</EventType>
             <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
             <InputData action="0" format="" name="Seq" tag="OTHER"/>
             <InputData action="0" format="" name="Group" tag="OTHER"/>
             <InputData action="0" format="" name="Event" tag="OTHER"/>
             <InputData action="0" format="" name="Ao" tag="OTHER"/>
-            <InputData action="0" format="" name="Next State" tag="OTHER"/>
+            <InputData action="0" format="" name="State" tag="OTHER"/>
         </InputLine>
         <InputLine>
             <Cardinality max="2147483647" min="0"/>
-            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SM)\s*\|\s*+(DCH)\s*:\s+ao=+(\S+),\ssig=+(\S+),\sst=+(\S+)\s*</RegEx>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SM)\s*\|\s*(ENSTATE)\s*:\s+ao=(\S+),\sst=(\S+)\s*</RegEx>
+            <EventType>SmEnState</EventType>
+            <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
+            <InputData action="0" format="" name="Seq" tag="OTHER"/>
+            <InputData action="0" format="" name="Group" tag="OTHER"/>
+            <InputData action="0" format="" name="Event" tag="OTHER"/>
+            <InputData action="0" format="" name="Ao" tag="OTHER"/>
+            <InputData action="0" format="" name="State" tag="OTHER"/>
+        </InputLine>
+        <InputLine>
+            <Cardinality max="2147483647" min="0"/>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SM)\s*\|\s*(EXSTATE)\s*:\s+ao=(\S+),\sst=(\S+)\s*</RegEx>
+            <EventType>SmExState</EventType>
+            <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
+            <InputData action="0" format="" name="Seq" tag="OTHER"/>
+            <InputData action="0" format="" name="Group" tag="OTHER"/>
+            <InputData action="0" format="" name="Event" tag="OTHER"/>
+            <InputData action="0" format="" name="Ao" tag="OTHER"/>
+            <InputData action="0" format="" name="State" tag="OTHER"/>
+        </InputLine>
+        <InputLine>
+            <Cardinality max="2147483647" min="0"/>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SM)\s*\|\s*(NENEX)\s*:\s+ao=(\S+),\s*(nen=\S+,\snex=\S+)\s*</RegEx>
+            <EventType>SmNEnEx</EventType>
+            <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
+            <InputData action="0" format="" name="Seq" tag="OTHER"/>
+            <InputData action="0" format="" name="Group" tag="OTHER"/>
+            <InputData action="0" format="" name="Event" tag="OTHER"/>
+            <InputData action="0" format="" name="Ao" tag="OTHER"/>
+            <InputData action="0" format="" name="Message" tag="MESSAGE"/>
+        </InputLine>
+        <InputLine>
+            <Cardinality max="2147483647" min="0"/>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SM)\s*\|\s*(NTRNACT)\s*:\s+ao=(\S+),\s*(nta=\S+,\snts=\S+)\s*</RegEx>
+            <EventType>SmNTrnAct</EventType>
+            <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
+            <InputData action="0" format="" name="Seq" tag="OTHER"/>
+            <InputData action="0" format="" name="Group" tag="OTHER"/>
+            <InputData action="0" format="" name="Event" tag="OTHER"/>
+            <InputData action="0" format="" name="Ao" tag="OTHER"/>
+            <InputData action="0" format="" name="Message" tag="MESSAGE"/>
+        </InputLine>
+        <InputLine>
+            <Cardinality max="2147483647" min="0"/>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SM)\s*\|\s*(TS_STATE)\s*:\s+ao=(\S+),\sst=(\S+)\s*</RegEx>
+            <EventType>SmTsState</EventType>
+            <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
+            <InputData action="0" format="" name="Seq" tag="OTHER"/>
+            <InputData action="0" format="" name="Group" tag="OTHER"/>
+            <InputData action="0" format="" name="Event" tag="OTHER"/>
+            <InputData action="0" format="" name="Ao" tag="OTHER"/>
+            <InputData action="0" format="" name="State" tag="OTHER"/>
+        </InputLine>
+        <InputLine>
+            <Cardinality max="2147483647" min="0"/>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SM)\s*\|\s*(EVT_PROC)\s*:\s+ao=(\S+)\s*</RegEx>
+            <EventType>SmEvtProc</EventType>
+            <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
+            <InputData action="0" format="" name="Seq" tag="OTHER"/>
+            <InputData action="0" format="" name="Group" tag="OTHER"/>
+            <InputData action="0" format="" name="Event" tag="OTHER"/>
+            <InputData action="0" format="" name="Ao" tag="OTHER"/>
+        </InputLine>
+        <InputLine>
+            <Cardinality max="2147483647" min="0"/>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SM)\s*\|\s*(EVT_NFOUND)\s*:\s+ao=(\S+),\ssig=(\S+)\s*</RegEx>
+            <EventType>SmEvtNotFound</EventType>
+            <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
+            <InputData action="0" format="" name="Seq" tag="OTHER"/>
+            <InputData action="0" format="" name="Group" tag="OTHER"/>
+            <InputData action="0" format="" name="Event" tag="OTHER"/>
+            <InputData action="0" format="" name="Ao" tag="OTHER"/>
+            <InputData action="0" format="" name="Signal" tag="OTHER"/>
+        </InputLine>
+        <InputLine>
+            <Cardinality max="2147483647" min="0"/>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SM)\s*\|\s*(CND_NFOUND)\s*:\s+ao=(\S+)\s*</RegEx>
+            <EventType>SmCndNotFound</EventType>
+            <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
+            <InputData action="0" format="" name="Seq" tag="OTHER"/>
+            <InputData action="0" format="" name="Group" tag="OTHER"/>
+            <InputData action="0" format="" name="Event" tag="OTHER"/>
+            <InputData action="0" format="" name="Ao" tag="OTHER"/>
+        </InputLine>
+        <inputline>
+            <cardinality max="2147483647" min="0"/>
+            <regex>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SM)\s*\|\s*(GRD_FALSE)\s*:\s+ao=(\S+)\s*</regex>
+            <eventtype>Smgrdfalse</eventtype>
+            <inputdata action="0" format="t" name="timestamp" tag="timestamp"/>
+            <inputdata action="0" format="" name="seq" tag="other"/>
+            <inputdata action="0" format="" name="group" tag="other"/>
+            <inputdata action="0" format="" name="event" tag="other"/>
+            <inputdata action="0" format="" name="ao" tag="other"/>
+        </inputline>
+        <inputline>
+            <cardinality max="2147483647" min="0"/>
+            <regex>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SM)\s*\|\s*(UNKN_STATE)\s*:\s+ao=(\S+)\s*</regex>
+            <eventtype>SmUnknState</eventtype>
+            <inputdata action="0" format="t" name="timestamp" tag="timestamp"/>
+            <inputdata action="0" format="" name="seq" tag="other"/>
+            <inputdata action="0" format="" name="group" tag="other"/>
+            <inputdata action="0" format="" name="event" tag="other"/>
+            <inputdata action="0" format="" name="ao" tag="other"/>
+        </inputline>
+        <inputline>
+            <cardinality max="2147483647" min="0"/>
+            <regex>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SM)\s*\|\s*(EX_HLEVEL)\s*:\s+ao=(\S+)\s*</regex>
+            <eventtype>SmExHLevel</eventtype>
+            <inputdata action="0" format="t" name="timestamp" tag="timestamp"/>
+            <inputdata action="0" format="" name="seq" tag="other"/>
+            <inputdata action="0" format="" name="group" tag="other"/>
+            <inputdata action="0" format="" name="event" tag="other"/>
+            <inputdata action="0" format="" name="ao" tag="other"/>
+        </inputline>
+        <inputline>
+            <cardinality max="2147483647" min="0"/>
+            <regex>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SM)\s*\|\s*(EX_TSEG)\s*:\s+ao=(\S+)\s*</regex>
+            <eventtype>SmExTSeg</eventtype>
+            <inputdata action="0" format="t" name="timestamp" tag="timestamp"/>
+            <inputdata action="0" format="" name="seq" tag="other"/>
+            <inputdata action="0" format="" name="group" tag="other"/>
+            <inputdata action="0" format="" name="event" tag="other"/>
+            <inputdata action="0" format="" name="ao" tag="other"/>
+        </inputline>
+        <inputline>
+            <cardinality max="2147483647" min="0"/>
+            <regex>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SM)\s*\|\s*(EX_ACT)\s*:\s+ao=(\S+),\sst=(\S+),\s(fn=\S+)\s*</regex>
+            <eventtype>SmExeAct</eventtype>
+            <inputdata action="0" format="t" name="timestamp" tag="timestamp"/>
+            <inputdata action="0" format="" name="seq" tag="other"/>
+            <inputdata action="0" format="" name="group" tag="other"/>
+            <inputdata action="0" format="" name="event" tag="other"/>
+            <inputdata action="0" format="" name="ao" tag="other"/>
+            <InputData action="0" format="" name="State" tag="OTHER"/>
+            <InputData action="0" format="" name="Message" tag="MESSAGE"/>
+        </inputline>
+        <InputLine>
+            <Cardinality max="2147483647" min="0"/>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SM)\s*\|\s*(DCH)\s*:\s+ao=(\S+),\ssig=(\S+),\sst=(\S+)\s*</RegEx>
             <EventType>SmDch</EventType>
             <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
             <InputData action="0" format="" name="Seq" tag="OTHER"/>
@@ -301,13 +439,13 @@
             <InputData action="0" format="" name="Event" tag="OTHER"/>
             <InputData action="0" format="" name="Ao" tag="OTHER"/>
             <InputData action="0" format="" name="Signal" tag="OTHER"/>
-            <InputData action="0" format="" name="Current State" tag="OTHER"/>
+            <InputData action="0" format="" name="State" tag="OTHER"/>
         </InputLine>
 
 	<!-- TMR Trace Group -->
         <InputLine>
             <Cardinality max="2147483647" min="0"/>
-            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(TIM)\s*\|\s*+(INIT)\s*:\s+t=+(\S+),\ssig=+(\S+)\s*</RegEx>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(TIM)\s*\|\s*(INIT)\s*:\s+t=(\S+),\ssig=(\S+)\s*</RegEx>
             <EventType>TmrInit</EventType>
             <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
             <InputData action="0" format="" name="Seq" tag="OTHER"/>
@@ -318,7 +456,7 @@
         </InputLine>
         <InputLine>
             <Cardinality max="2147483647" min="0"/>
-            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(TIM)\s*\|\s*+(START)\s*:\s+t=+(\S+),\sao=+(\S+),\snt=+(\d+),\sper=+(\d+)\s*</RegEx>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(TIM)\s*\|\s*(START)\s*:\s+t=(\S+),\sao=(\S+),\snt=(\d+),\sper=(\d+)\s*</RegEx>
             <EventType>TmrStop</EventType>
             <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
             <InputData action="0" format="" name="Seq" tag="OTHER"/>
@@ -331,7 +469,7 @@
         </InputLine>
         <InputLine>
             <Cardinality max="2147483647" min="0"/>
-            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(TIM)\s*\|\s*+(STOP)\s*:\s+t=+(\S+),\snt=+(\d+),\sper=+(\d+)\s*</RegEx>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(TIM)\s*\|\s*(STOP)\s*:\s+t=(\S+),\snt=(\d+),\sper=(\d+)\s*</RegEx>
             <EventType>TmrStart</EventType>
             <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
             <InputData action="0" format="" name="Seq" tag="OTHER"/>
@@ -343,7 +481,7 @@
         </InputLine>
         <InputLine>
             <Cardinality max="2147483647" min="0"/>
-            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(TIM)\s*\|\s*+(TOUT)\s*:\s+t=+(\S+),\ssig=+(\S+),\sao=+(\S+)\s*</RegEx>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(TIM)\s*\|\s*(TOUT)\s*:\s+t=(\S+),\ssig=(\S+),\sao=(\S+)\s*</RegEx>
             <EventType>TmrTout</EventType>
             <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
             <InputData action="0" format="" name="Seq" tag="OTHER"/>
@@ -355,7 +493,7 @@
         </InputLine>
         <InputLine>
             <Cardinality max="2147483647" min="0"/>
-            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(TIM)\s*\|\s*+(REM)\s*:\s+t=+(\S+)\s*</RegEx>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(TIM)\s*\|\s*(REM)\s*:\s+t=(\S+)\s*</RegEx>
             <EventType>TmrRem</EventType>
             <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
             <InputData action="0" format="" name="Seq" tag="OTHER"/>
@@ -367,7 +505,19 @@
 	<!-- FWK Trace Group -->
         <InputLine>
             <Cardinality max="2147483647" min="0"/>
-            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(FWK)\s*\|\s*+(AE)\s*:\s+es=(\d+),\ssig=(\S+),\spid=(\S+),\src=\d+,\snb=\d+,\snmin=(\d+),\sactor=+(\S+)\s*</RegEx>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(FWK)\s*\|\s*(EPREG)\s*:\s+ep=(\S+),\sss=(\S+),\ses=(\S+).*</RegEx>
+            <EventType>FwkEPReg</EventType>
+            <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
+            <InputData action="0" format="" name="Seq" tag="OTHER"/>
+            <InputData action="0" format="" name="Group" tag="OTHER"/>
+            <InputData action="0" format="" name="Event" tag="OTHER"/>
+            <InputData action="0" format="" name="PoolId" tag="OTHER"/>
+            <InputData action="0" format="" name="Block Size" tag="OTHER"/>
+            <InputData action="0" format="" name="EvtSize" tag="OTHER"/>
+        </InputLine>
+        <InputLine>
+            <Cardinality max="2147483647" min="0"/>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(FWK)\s*\|\s*(AE)\s*:\s+es=(\d+),\ssig=(\S+),\spid=(\S+),\src=\d+,\snb=\d+,\snmin=(\d+),\sactor=(\S+)\s*</RegEx>
             <EventType>FwkAe</EventType>
             <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
             <InputData action="0" format="" name="Seq" tag="OTHER"/>
@@ -381,7 +531,18 @@
         </InputLine>
         <InputLine>
             <Cardinality max="2147483647" min="0"/>
-            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(FWK)\s*\|\s*+(GCR)\s*:\s+sig=(\S+),\spid=(\S+),\src=\d+,\snb=\d+,\snmin=(\d+),\sactor=+(\S+)\s*</RegEx>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(FWK)\s*\|\s*(GC)\s*:\s+sig=(\S+),\spid=(\S+),\src=\d+\s*</RegEx>
+            <EventType>FwkGc</EventType>
+            <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
+            <InputData action="0" format="" name="Seq" tag="OTHER"/>
+            <InputData action="0" format="" name="Group" tag="OTHER"/>
+            <InputData action="0" format="" name="Event" tag="OTHER"/>
+            <InputData action="0" format="" name="Signal" tag="OTHER"/>
+            <InputData action="0" format="" name="PoolId" tag="OTHER"/>
+        </InputLine>
+        <InputLine>
+            <Cardinality max="2147483647" min="0"/>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(FWK)\s*\|\s*(GCR)\s*:\s+sig=(\S+),\spid=(\S+),\src=\d+,\snb=\d+,\snmin=(\d+),\sactor=(\S+)\s*</RegEx>
             <EventType>FwkGcr</EventType>
             <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
             <InputData action="0" format="" name="Seq" tag="OTHER"/>
@@ -394,18 +555,7 @@
         </InputLine>
         <InputLine>
             <Cardinality max="2147483647" min="0"/>
-            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(FWK)\s*\|\s*+(GC)\s*:\s+sig=(\S+),\spid=+(\S+),\src=\d+\s*</RegEx>
-            <EventType>FwkGc</EventType>
-            <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
-            <InputData action="0" format="" name="Seq" tag="OTHER"/>
-            <InputData action="0" format="" name="Group" tag="OTHER"/>
-            <InputData action="0" format="" name="Event" tag="OTHER"/>
-            <InputData action="0" format="" name="Signal" tag="OTHER"/>
-            <InputData action="0" format="" name="PoolId" tag="OTHER"/>
-        </InputLine>
-        <InputLine>
-            <Cardinality max="2147483647" min="0"/>
-            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(FWK)\s*\|\s*+(EPOOL)\s*:\s+ep=(\S+),\snm=(\S+)\s*</RegEx>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(FWK)\s*\|\s*(EPOOL)\s*:\s+ep=(\S+),\snm=(\S+)\s*</RegEx>
             <EventType>FwkEvtPool</EventType>
             <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
             <InputData action="0" format="" name="Seq" tag="OTHER"/>
@@ -418,7 +568,7 @@
 	<!-- USR Trace Group -->
         <InputLine>
             <Cardinality max="2147483647" min="0"/>
-            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(USR)\s*\|\s*+(\S+)\s*:\sUser trace information\s*</RegEx>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(USR)\s*\|\s*(\S+)\s*:\sUser trace information\s*</RegEx>
             <EventType>User</EventType>
             <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
             <InputData action="0" format="" name="Seq" tag="OTHER"/>
@@ -437,30 +587,25 @@
         <OutputColumn name="Group" tag="OTHER"/>
         <OutputColumn name="Event" tag="OTHER"/>
         <OutputColumn name="Ao" tag="OTHER"/>
+        <OutputColumn name="Prio" tag="OTHER"/>
         <OutputColumn name="Signal" tag="OTHER"/>
         <OutputColumn name="Sender" tag="OTHER"/>
+        <OutputColumn name="QueObj" tag="OTHER"/>
         <OutputColumn name="nElem" tag="OTHER"/>
         <OutputColumn name="nMin" tag="OTHER"/>
         <OutputColumn name="Latency" tag="OTHER"/>
-        <OutputColumn name="Initial State" tag="OTHER"/>
-        <OutputColumn name="History State" tag="OTHER"/>
-        <OutputColumn name="Source State" tag="OTHER"/>
+        <OutputColumn name="State" tag="OTHER"/>
         <OutputColumn name="Target State" tag="OTHER"/>
-        <OutputColumn name="Next State" tag="OTHER"/>
-        <OutputColumn name="Current State" tag="OTHER"/>
         <OutputColumn name="TmrObj" tag="OTHER"/>
         <OutputColumn name="nTick" tag="OTHER"/>
         <OutputColumn name="Per" tag="OTHER"/>
         <OutputColumn name="MpObj" tag="OTHER"/>
+        <OutputColumn name="PoolId" tag="OTHER"/>
         <OutputColumn name="nBlock" tag="OTHER"/>
         <OutputColumn name="Block Size" tag="OTHER"/>
         <OutputColumn name="nFree" tag="OTHER"/>
-        <OutputColumn name="QueObj" tag="OTHER"/>
-        <OutputColumn name="Message" tag="MESSAGE"/>
-        <OutputColumn name="PoolId" tag="OTHER"/>
         <OutputColumn name="EvtPool" tag="OTHER"/>
         <OutputColumn name="EvtSize" tag="OTHER"/>
-        <OutputColumn name="Prio" tag="OTHER"/>
-        <OutputColumn name="Size" tag="OTHER"/>
+        <OutputColumn name="Message" tag="MESSAGE"/>
     </Definition>
 </CustomTxtTraceDefinitionList>
