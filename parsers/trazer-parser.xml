@@ -188,7 +188,7 @@
         </InputLine>
         <InputLine>
             <Cardinality max="2147483647" min="0"/>
-            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SMA)\s*\|\s*(GET)\s*:\s+ao=(\S+),\ssig=(\S+),\s\S+,\s\S+,\snelem=(\d+),\snmin=(\d+),\srt=(\d+),.*</RegEx>
+            <RegEx>\s*(\d+)\|\s+\[(\s*\d+)\]\s\|\s+(SMA)\s*\|\s*(GET)\s*:\s+ao=(\S+),\ssig=(\S+),\s\S+,\s\S+,\snelem=(\d+),\snmin=(\d+),\srt=(-\d+),.*</RegEx>
             <EventType>SmaGet</EventType>
             <InputData action="0" format="T" name="Timestamp" tag="TIMESTAMP"/>
             <InputData action="0" format="" name="Seq" tag="OTHER"/>
